@@ -1,0 +1,178 @@
+% Use this file as a template for your beamer slides.
+
+\documentclass{beamer}
+
+\usepackage[noae]{Sweave}
+\usepackage{color}
+\definecolor{Blue}{rgb}{0,0,0.5}
+\definecolor{Green}{rgb}{0,0.5,0}
+\RecustomVerbatimEnvironment{Sinput}{Verbatim}{%
+xleftmargin=2em,%
+fontsize=\footnotesize,%
+fontshape=sl,%
+formatcom=\color{Blue}%
+}
+
+\usetheme[secheader]{Boadilla}
+\usepackage{beamerthemesplit}
+\setbeamertemplate{items}[square] % Ma square bullets ni mbama zoona!
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{url}
+
+\title{Bonolo}
+\subtitle{A General Digital Library System for File-based Collections}
+\author{Lighton Phiri, University of Cape Town}
+\institute{Digital Libraries Laboratory\\Department of Computer Science\\University of Cape\\Cape Town, South Africa\\\url{http://dl.cs.uct.ac.za}}
+\date{November 12, 2012}
+
+\begin{document}
+
+\maketitle
+
+%first slide begins
+
+\begin{frame}
+
+\frametitle{First Slide...}
+
+%contents of the first slides...
+
+An itemized list:
+
+\begin{itemize}
+
+\item In beamer, a \emph{frame} is what you would normally call a ``slide''.
+
+\item itemized list 2
+
+\item itemized item 3
+
+\end{itemize}
+
+A displayed formula:
+
+\[
+\sum_{k = 1}^{n} \binom{n}{k} x^{n - k} y^{k} = (x + y)^{n}
+\]
+
+\begin{theorem}
+
+If $n$ is an integer, then $n (n + 1)$ is even.
+
+\end{theorem}
+
+Remark: In addition to the \emph{theorem}  environment, beamer has the the following  predefined environments:
+\emph{corollary}, \emph{definition}, \emph{example} and \emph{proof}.
+
+\end{frame} %end of first slide
+
+
+\begin{frame}[fragile] %second frame
+
+\frametitle{Frames containing verbatim text...}
+
+\begin{itemize}
+\item \emph{Frames} containing verbatim text require special attention. Such frame must be marked as \emph{fragile}.
+\item This is accomplished as follows
+
+ \begin{verbatim}
+ \begin{frame}[fragile]
+ %...frame contents..
+ \end{frame}
+ \end{verbatim}
+
+\item The \verb!\begin{frame}...\end{frame}! block may be repeated any number of times to produce a sequence of slides.
+\item The \verb!\frametitle{...}! command puts a title on the slide. Although its use is optional, it is only in very rare cases where omitting a slide title would make sense.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]
+
+\frametitle{Including Graphics in Frames...}
+
+\begin{itemize}
+\item Beamer recognizes images in any of the PDF, PNG and JPG formats. (Note that PostScript (eps format)  is not among these.)
+\item It is important to know that beamer formats its output to a size of 5.04 in by 3.78 in.
+\item Example: The code
+\begin{verbatim}
+\begin{center}
+  \includegraphics[width=4in,height=2in]{icadl2012_bonolo-ci_evaluation_graph.png}
+\end{center}
+\end{verbatim}
+results...
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+
+\frametitle{UX Evaluation - End User Interface}
+
+\begin{center}
+  %\includegraphics[width=.95\textwidth]{figure.png}
+<<eval-ux-ui, fig=TRUE, echo=FALSE, height=4>>=
+ps.options(pointsize=10,family="serif")
+bonoloui <- read.table("bonoloui.dat", header=T, sep="\t")
+par(xpd=T, mar=par()$mar+c(0,0,0,8))
+barplot(as.matrix(bonoloui), beside=TRUE, family="serif", xlab="Average UX ratings", ylab="Survey Participants", ylim=c(0,5), col=rainbow(7), cex.axis=0.8, las=1, names.arg=c("Search&\nBrowse", "Navigability", "Similarity", "General"), cex=0.8)
+op <- par(family = "serif")
+legend(32,4.5, c("Intuitive", "Simple", "Satisfied", "Expected", "Response", "Effective", "Beneficial"), cex=0.8, fill=rainbow(7));
+box("outer", "dotted")
+@  
+\end{center}
+
+\end{frame}
+
+
+\begin{frame}
+
+\frametitle{UX Evaluation - Curator Interface}
+
+\begin{center}
+  %\includegraphics[width=.95\textwidth]{figure.png}
+<<eval-ux-ci, fig=TRUE, echo=FALSE, height=4>>=
+ps.options(pointsize=10,family="serif")
+bonoloci <- read.table("bonoloci.dat", header=T, sep="\t")
+par(xpd=T, mar=par()$mar+c(0,0,0,7))
+#barplot(as.matrix(bonoloci), ylim=c(0,15), col=heat.colors(5), cex.axis=0.8, cex=0.8, las=1, names.arg=c("Interest/\nEnjoyment", "Perceived\nCompetence", "Value/\nUsefulness"))
+barplot(as.matrix(bonoloci), family="serif", xlab="Average UX ratings", ylab="Survey Participants", ylim=c(0,25), col=rainbow(5), cex.axis=0.8, las=1, names.arg=c("Interest/\nEnjoyment", "Perceived\nCompetence", "Value/\nUsefulness"), cex=0.8)
+#legend(18,10, c("Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"), cex=0.8, fill=heat.colors(5));
+op <- par(family = "serif")
+legend(4,16, c("Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"), cex=0.8, fill=rainbow(5));
+box("outer", "dotted")
+@  
+\end{center}
+
+\end{frame}
+
+\begin{frame}
+
+\frametitle{Performance Evaluation - Hierarchical Strucutre}
+
+\begin{center}
+  %\includegraphics[width=.95\textwidth]{figure.png}
+<<eval-perf, fig=TRUE, echo=FALSE, height=4>>=
+ps.options(pointsize=10,family="serif")
+bonoloperf <- read.table("bonoloperf.dat", header=T, sep="\t")
+plot_colors <- c("blue", "red")
+plot(bonoloperf$Initial, type="o", col=plot_colors[1], ylim=c(0,10), axes=FALSE, ann=FALSE)
+op <- par(family = "serif")
+axis(1, at=1:5, lab=c("1,024", "2,048", "4,096", "8,192", "16,384"))
+axis(2, las=1, at=1*0:10)
+lines(bonoloperf$Page, type="o", pch=22, lty=2, col=plot_colors[2])
+title(xlab="Files in directory")
+title(ylab="Time (seconds)")
+legend(1, 10, c("Initial Load", "Page Load"), cex=0.8, col=plot_colors, pch=21:22, lty=1:2)
+box("outer", "dotted")
+@  
+\end{center}
+
+\end{frame}
+
+
+\end{document}
