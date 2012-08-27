@@ -1,0 +1,25 @@
+\documentclass{beamer}
+\usetheme[pageofpages=of,% String used between the current page and the
+                         % total page count.
+          alternativetitlepage=true%,% Use the fancy title page.
+          %titlepagelogo=dl-cs-uct-ac-za.png,% Logo for the first page.
+          ]{Torino}
+\usecolortheme{freewilly}
+
+\author{{\bf Lighton Phiri} \and Kyle Williams \and Miles Robinson\\Stuart Hammar \and Hussein Suleman}
+\title{Bonolo\symbolfootnote[2, frame]{\tiny A Sesotho word meaning easy.}}
+\subtitle{A General Digital Library System for File-based Collections}
+\institute{Digital Libraries Laboratory\\Department of Computer Science\\University of Cape Town}
+\date{November 13, 2012}
+
+% The log drawn in the upper right corner.
+%\logo{\includegraphics[height=0.125\paperheight]{dl-cs-uct-ac-za.png}}
+
+% Footer symbols
+\long\def\symbolfootnote[#1]#2{\begingroup%
+\def\thefootnote{\fnsymbol{footnote}}\footnote[#1]{#2}\endgroup}
+
+\begin{document}
+\include{content}
+\end{document}
+

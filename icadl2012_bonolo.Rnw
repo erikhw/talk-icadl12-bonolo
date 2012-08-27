@@ -2,27 +2,8 @@
 
 \documentclass{beamer}
 
-\usetheme[secheader]{Madrid}
+%\usetheme[secheader]{Madrid}
 \usetheme{Madrid}
-
-\makeatletter
-\setbeamertemplate{footline}
-{
-  leavevmode%
-  hbox{%
-  begin{beamercolorbox}[wd=.333333paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
-    usebeamerfont{author in head/foot}insertshortauthor%~~beamer@ifempty{insertshortinstitute}{}{(insertshortinstitute)}
-  end{beamercolorbox}%
-  begin{beamercolorbox}[wd=.333333paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
-    usebeamerfont{title in head/foot}insertshorttitle
-  end{beamercolorbox}%
-  begin{beamercolorbox}[wd=.333333paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
-    usebeamerfont{date in head/foot}insertshortdate{}hspace*{2em}
-    insertframenumber{} / inserttotalframenumberhspace*{2ex}
-  end{beamercolorbox}}%
-  vskip0pt%
-}
-\makeatother
 
 %\usepackage{beamerthemesplit}
 \setbeamertemplate{items}[square] % Ma square bullets ni mbama zoona!
@@ -140,14 +121,14 @@ results...
 
 \begin{center}
   %\includegraphics[width=.95\textwidth]{figure.png}
-<<eval-ux-ui, fig=TRUE, echo=FALSE, height=4>>=
+<<eval-ux-ui, fig=TRUE, echo=FALSE, height=3, width=5.5>>=
 ps.options(pointsize=10,family="serif")
 bonoloui <- read.table("bonoloui.dat", header=T, sep="\t")
-par(xpd=T, mar=par()$mar+c(0,0,0,8))
-barplot(as.matrix(bonoloui), beside=TRUE, family="serif", xlab="Average UX ratings", ylab="Survey Participants", ylim=c(0,5), col=rainbow(7), cex.axis=0.8, las=1, space=c(0, 4), names.arg=c("Search&\nBrowse", "Navigability", "Similarity", "General"), cex=0.8)
+par(xpd=T, mar=par()$mar+c(0,0,0.5,7))
+barplot(as.matrix(bonoloui), beside=TRUE, family="serif", xlab="Average UX ratings", ylab="Survey Participants", ylim=c(0,5), col=rainbow(7), cex.axis=0.7, las=1, space=c(0, 4), names.arg=c("Search&\nBrowse", "Navigability", "Similarity", "General"), cex=0.7)
 op <- par(family = "serif")
-legend(50,4.5, c("Intuitive", "Simple", "Satisfied", "Expected", "Response", "Effective", "Beneficial"), cex=0.8, fill=rainbow(7));
-box("outer", "dotted")
+legend(50,4.5, c("Intuitive", "Simple", "Satisfied", "Expected", "Response", "Effective", "Beneficial"), cex=0.7, fill=rainbow(7));
+box("inner", "solid")
 @  
 \end{center}
 
@@ -160,15 +141,15 @@ box("outer", "dotted")
 
 \begin{center}
   %\includegraphics[width=.95\textwidth]{figure.png}
-<<eval-ux-ci, fig=TRUE, echo=FALSE, height=4>>=
+<<eval-ux-ci, fig=TRUE, echo=FALSE, height=3, width=5.5>>=
 bonoloci <- read.table("bonoloci.dat", header=T, sep="\t")
-par(xpd=T, mar=par()$mar+c(0,0,0,7))
-#barplot(as.matrix(bonoloci), ylim=c(0,15), col=heat.colors(5), cex.axis=0.8, cex=0.8, las=1, space=0.1, names.arg=c("Interest/\nEnjoyment", "Perceived\nCompetence", "Value/\nUsefulness"))
-barplot(as.matrix(bonoloci), family="serif", xlab="Average UX ratings", ylab="Survey Participants", ylim=c(0,25), col=rainbow(5), cex.axis=0.8, las=1, names.arg=c("Interest/\nEnjoyment", "Perceived\nCompetence", "Value/\nUsefulness"), cex=0.8)
-#legend(18,10, c("Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"), cex=0.8, fill=heat.colors(5));
+par(xpd=T, mar=par()$mar+c(0,0,0.5,7))
+#barplot(as.matrix(bonoloci), ylim=c(0,15), col=heat.colors(5), cex.axis=0.7, cex=0.7, las=1, space=0.1, names.arg=c("Interest/\nEnjoyment", "Perceived\nCompetence", "Value/\nUsefulness"))
+barplot(as.matrix(bonoloci), family="serif", xlab="Average UX ratings", ylab="Survey Participants", ylim=c(0,25), col=rainbow(5), cex.axis=0.7, las=1, names.arg=c("Interest/\nEnjoyment", "Perceived\nCompetence", "Value/\nUsefulness"), cex=0.7)
+#legend(18,10, c("Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"), cex=0.7, fill=heat.colors(5));
 op <- par(family = "serif")
-legend(4,22, c("Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"), cex=0.8, fill=rainbow(5));
-box("outer", "dotted")
+legend(4,22, c("Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"), cex=0.6, fill=rainbow(5));
+box("inner", "solid")
 @  
 \end{center}
 
@@ -180,19 +161,20 @@ box("outer", "dotted")
 
 \begin{center}
   %\includegraphics[width=.95\textwidth]{figure.png}
-<<eval-perf, fig=TRUE, echo=FALSE, height=4>>=
+<<eval-perf, fig=TRUE, echo=FALSE, height=3, width=5.5>>=
 ps.options(pointsize=10,family="serif")
 bonoloperf <- read.table("bonoloperf.dat", header=T, sep="\t")
+par(xpd=T, mar=par()$mar+c(0,0.5,-1,5), cex=0.7)
 plot_colors <- c("blue", "red")
 plot(bonoloperf$Initial, type="o", col=plot_colors[1], ylim=c(0,10), axes=FALSE, ann=FALSE)
 op <- par(family = "serif")
-axis(1, at=1:5, lab=c("1,024", "2,048", "4,096", "8,192", "16,384"))
+axis(1, at=1:6, lab=c("1,024", "2,048", "4,096", "8,192", "16,384", "32,768"))
 axis(2, las=1, at=1*0:10)
 lines(bonoloperf$Page, type="o", pch=22, lty=2, col=plot_colors[2])
 title(xlab="Files in directory")
 title(ylab="Time (seconds)")
-legend(1, 10, c("Initial Load", "Page Load"), cex=0.8, col=plot_colors, pch=21:22, lty=1:2)
-box("outer", "dotted")
+legend(1, 10, c("Initial Load", "Page Load"), cex=0.7, col=plot_colors, pch=21:22, lty=1:2)
+box("inner", "solid")
 @  
 \end{center}
 
