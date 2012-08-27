@@ -2,19 +2,29 @@
 
 \documentclass{beamer}
 
-\usepackage[noae]{Sweave}
-\usepackage{color}
-\definecolor{Blue}{rgb}{0,0,0.5}
-\definecolor{Green}{rgb}{0,0.5,0}
-\RecustomVerbatimEnvironment{Sinput}{Verbatim}{%
-xleftmargin=2em,%
-fontsize=\footnotesize,%
-fontshape=sl,%
-formatcom=\color{Blue}%
-}
+\usetheme[secheader]{Madrid}
+\usetheme{Madrid}
 
-\usetheme[secheader]{Boadilla}
-\usepackage{beamerthemesplit}
+\makeatletter
+\setbeamertemplate{footline}
+{
+  leavevmode%
+  hbox{%
+  begin{beamercolorbox}[wd=.333333paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+    usebeamerfont{author in head/foot}insertshortauthor%~~beamer@ifempty{insertshortinstitute}{}{(insertshortinstitute)}
+  end{beamercolorbox}%
+  begin{beamercolorbox}[wd=.333333paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+    usebeamerfont{title in head/foot}insertshorttitle
+  end{beamercolorbox}%
+  begin{beamercolorbox}[wd=.333333paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+    usebeamerfont{date in head/foot}insertshortdate{}hspace*{2em}
+    insertframenumber{} / inserttotalframenumberhspace*{2ex}
+  end{beamercolorbox}}%
+  vskip0pt%
+}
+\makeatother
+
+%\usepackage{beamerthemesplit}
 \setbeamertemplate{items}[square] % Ma square bullets ni mbama zoona!
 \usepackage{amsmath}
 \usepackage{amsfonts}
@@ -24,13 +34,30 @@ formatcom=\color{Blue}%
 \usepackage{setspace}
 \usepackage{url}
 
-\title{Bonolo}
-\subtitle{A General Digital Library System for File-based Collections}
-\author{Lighton Phiri, University of Cape Town}
-\institute{Digital Libraries Laboratory\\Department of Computer Science\\University of Cape\\Cape Town, South Africa\\\url{http://dl.cs.uct.ac.za}}
-\date{November 12, 2012}
+% Footer symbols
+\long\def\symbolfootnote[#1]#2{\begingroup%
+\def\thefootnote{\fnsymbol{footnote}}\footnote[#1]{#2}\endgroup}
+
+% Remove navigation symbols
+\setbeamertemplate{navigation symbols}{}
+
+\title[Title]{Bonolo\symbolfootnote[2, frame]{\tiny Sesotho word for easy.}}
+\subtitle[Subtitle]{A General Digital Library System for File-based Collections}
+\author[Author(s)]{{\bf Lighton Phiri} \and Kyle Williams \and Miles Robinson\\Stuart Hammar \and Hussein Suleman}
+\institute[Institute]{Digital Libraries Laboratory\\Department of Computer Science\\University of Cape\\Cape Town, South Africa}
+\date{November 13, 2012}
+
 
 \begin{document}
+
+% Remove footline for title slide/frame
+%{
+%\setbeamertemplate{footline}{} 
+%\begin{frame}
+%  \titlepage
+%\end{frame}
+%}
+%\addtocounter{framenumber}{-1}
 
 \maketitle
 
@@ -48,7 +75,7 @@ An itemized list:
 
 \item In beamer, a \emph{frame} is what you would normally call a ``slide''.
 
-\item itemized list 2
+\item itemized list 2\footnote{This doesn't seem to be working.}
 
 \item itemized item 3
 
@@ -60,11 +87,9 @@ A displayed formula:
 \sum_{k = 1}^{n} \binom{n}{k} x^{n - k} y^{k} = (x + y)^{n}
 \]
 
-\begin{theorem}
-
-If $n$ is an integer, then $n (n + 1)$ is even.
-
-\end{theorem}
+\begin{theorem}[HSD]
+Hardware\& software dependencies
+\end{theorem}[HSD]
 
 Remark: In addition to the \emph{theorem}  environment, beamer has the the following  predefined environments:
 \emph{corollary}, \emph{definition}, \emph{example} and \emph{proof}.
@@ -111,7 +136,7 @@ results...
 
 \begin{frame}
 
-\frametitle{UX Evaluation - End User Interface}
+\frametitle{UX - End User Interface}
 
 \begin{center}
   %\includegraphics[width=.95\textwidth]{figure.png}
@@ -119,9 +144,9 @@ results...
 ps.options(pointsize=10,family="serif")
 bonoloui <- read.table("bonoloui.dat", header=T, sep="\t")
 par(xpd=T, mar=par()$mar+c(0,0,0,8))
-barplot(as.matrix(bonoloui), beside=TRUE, family="serif", xlab="Average UX ratings", ylab="Survey Participants", ylim=c(0,5), col=rainbow(7), cex.axis=0.8, las=1, names.arg=c("Search&\nBrowse", "Navigability", "Similarity", "General"), cex=0.8)
+barplot(as.matrix(bonoloui), beside=TRUE, family="serif", xlab="Average UX ratings", ylab="Survey Participants", ylim=c(0,5), col=rainbow(7), cex.axis=0.8, las=1, space=c(0, 4), names.arg=c("Search&\nBrowse", "Navigability", "Similarity", "General"), cex=0.8)
 op <- par(family = "serif")
-legend(32,4.5, c("Intuitive", "Simple", "Satisfied", "Expected", "Response", "Effective", "Beneficial"), cex=0.8, fill=rainbow(7));
+legend(50,4.5, c("Intuitive", "Simple", "Satisfied", "Expected", "Response", "Effective", "Beneficial"), cex=0.8, fill=rainbow(7));
 box("outer", "dotted")
 @  
 \end{center}
@@ -131,19 +156,18 @@ box("outer", "dotted")
 
 \begin{frame}
 
-\frametitle{UX Evaluation - Curator Interface}
+\frametitle{UX - Curator Interface}
 
 \begin{center}
   %\includegraphics[width=.95\textwidth]{figure.png}
 <<eval-ux-ci, fig=TRUE, echo=FALSE, height=4>>=
-ps.options(pointsize=10,family="serif")
 bonoloci <- read.table("bonoloci.dat", header=T, sep="\t")
 par(xpd=T, mar=par()$mar+c(0,0,0,7))
-#barplot(as.matrix(bonoloci), ylim=c(0,15), col=heat.colors(5), cex.axis=0.8, cex=0.8, las=1, names.arg=c("Interest/\nEnjoyment", "Perceived\nCompetence", "Value/\nUsefulness"))
+#barplot(as.matrix(bonoloci), ylim=c(0,15), col=heat.colors(5), cex.axis=0.8, cex=0.8, las=1, space=0.1, names.arg=c("Interest/\nEnjoyment", "Perceived\nCompetence", "Value/\nUsefulness"))
 barplot(as.matrix(bonoloci), family="serif", xlab="Average UX ratings", ylab="Survey Participants", ylim=c(0,25), col=rainbow(5), cex.axis=0.8, las=1, names.arg=c("Interest/\nEnjoyment", "Perceived\nCompetence", "Value/\nUsefulness"), cex=0.8)
 #legend(18,10, c("Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"), cex=0.8, fill=heat.colors(5));
 op <- par(family = "serif")
-legend(4,16, c("Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"), cex=0.8, fill=rainbow(5));
+legend(4,22, c("Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"), cex=0.8, fill=rainbow(5));
 box("outer", "dotted")
 @  
 \end{center}
@@ -152,7 +176,7 @@ box("outer", "dotted")
 
 \begin{frame}
 
-\frametitle{Performance Evaluation - Hierarchical Strucutre}
+\frametitle{Performance - Directory Strucutre}
 
 \begin{center}
   %\includegraphics[width=.95\textwidth]{figure.png}
@@ -173,6 +197,5 @@ box("outer", "dotted")
 \end{center}
 
 \end{frame}
-
 
 \end{document}
