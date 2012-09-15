@@ -1,0 +1,28 @@
+<<fig=FALSE, echo=FALSE>>=
+
+# load required libraries and define environment
+require('tikzDevice')
+tikz('evaluation-ux-ci.tex', standAlone=FALSE, bareBones=FALSE,
+     width=4.6, height=2.7)
+
+# define data source
+bonoloci <- read.table("../bonoloci.dat", header=T, sep="\t")
+
+# define plot area
+par(xpd=T, mar=c(4,5,1,5), cex=0.70)
+barplot(as.matrix(bonoloci), beside=TRUE, xlim=c(0,20),
+	ylim=c(0,15), col=rainbow(5), cex.axis=0.70, las=1, 
+	space=c(0, 1), names.arg=
+	  c("Interest/\nEnjoyment", 
+	    "Perceived\nCompetence", 
+	    "Value/\nUsefulness"), axes=FALSE, ann=FALSE,
+xlab="Average UX Ratings", ylab="Survey Participants")
+axis(2, las=1, at=seq(0, 15, by=3))
+legend(17.3,15, c("Strongly Agree", "Agree", 
+	       "Neutral", "Disagree", 
+	       "Strongly Disagree"), 
+       fill=rainbow(5), bty="o")
+#grid(NA, 10, lty="dotted")
+#abline(h=(seq(0,15,1)), col="lightgray", lty="dotted")
+#box("inner", "solid")
+@

@@ -191,51 +191,28 @@
 \end{frame}
 
 \begin{frame}
-
-\begin{center}
-<<eval-ux-ui, fig=TRUE, echo=FALSE, height=2.5, width=4>>=
-ps.options(pointsize=8,family="serif")
-bonoloui <- read.table("../bonoloui.dat", header=T, sep="\t")
-par(xpd=T, mar=par()$mar+c(0,0.5,0,5), cex=0.7)
-barplot(as.matrix(bonoloui), beside=TRUE, family="serif", xlab="Average UX ratings", ylab="Survey Participants", ylim=c(0,5), col=rainbow(7), cex.axis=0.7, las=1, space=c(0, 3), names.arg=c("Search&\nBrowse", "Navigability", "Similarity", "General"), cex=0.7)
-op <- par(family = "serif")
-legend(45,4.5, c("Intuitive", "Simple", "Satisfied", "Expected", "Response", "Effective", "Beneficial"), cex=0.7, fill=rainbow(7));
-box("inner", "solid")
-@  
-\end{center}
-
+\begin{figure}
+ \centering
+% \framebox[\texwidth]{
+ \input{evaluation-ux-ui.tex}
+% }
+\end{figure}
 \end{frame}
 
 \begin{frame}
-\begin{center}
-<<eval-ux-ci, fig=TRUE, echo=FALSE, height=2.5, width=4>>=
-bonoloci <- read.table("../bonoloci.dat", header=T, sep="\t")
-par(xpd=T, mar=par()$mar+c(0,0.5,0,5), cex=0.7)
-barplot(as.matrix(bonoloci), family="serif", xlab="Average UX ratings", ylab="Survey Participants", ylim=c(0,25), col=rainbow(5), cex.axis=0.7, las=1, names.arg=c("Interest/\nEnjoyment", "Perceived\nCompetence", "Value/\nUsefulness"), cex=0.7)
-op <- par(family = "serif")
-legend(4,22, c("Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"), cex=0.6, fill=rainbow(5));
-box("inner", "solid")
-@  
-\end{center}
+\begin{figure}
+ \centering
+% \framebox[\texwidth]{
+ \input{evaluation-ux-ci.tex}
+% }
+\end{figure}
 \end{frame}
 
 \begin{frame}
-\begin{center}
-<<>>=
-<<eval-perf, fig=TRUE, echo=FALSE, height=2.5, width=4>>=
-#ps.options(pointsize=10,family="serif")
-bonoloperf <- read.table("../bonoloperf.dat", header=T, sep="\t")
-par(xpd=T, mar=par()$mar+c(0,0.5,-1,5), cex=0.7)
-plot_colors <- c("blue", "red")
-plot(bonoloperf$Initial, type="o", col=plot_colors[1], ylim=c(0,10), axes=FALSE, ann=FALSE, cex=0.7)
-op <- par(family = "serif")
-axis(1, at=1:6, lab=c("1,024", "2,048", "4,096", "8,192", "16,384", "32,768"), cex=0.7)
-axis(2, las=1, at=2*0:5, cex=0.7)
-lines(bonoloperf$Page, type="o", pch=22, lty=2, col=plot_colors[2], cex=0.7)
-title(xlab="Files in directory", cex=0.7)
-title(ylab="Time (seconds)", cex=0.7)
-legend(1, 10, c("Initial Load", "Page Load"), cex=0.7, col=plot_colors, pch=21:22, lty=1:2)
-box("inner", "solid")
-@
-\end{center}
+\begin{figure}
+ \centering
+% \framebox[\texwidth]{
+ \input{evaluation-perf.tex}
+% }
+\end{figure}
 \end{frame}

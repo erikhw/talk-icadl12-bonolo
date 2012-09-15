@@ -158,7 +158,6 @@ box("inner", "solid")
 \begin{frame}
 
 \frametitle{Performance - Directory Strucutre}
-
 \begin{center}
   %\includegraphics[width=.95\textwidth]{figure.png}
 <<eval-perf, fig=TRUE, echo=FALSE, height=3, width=5.5>>=
@@ -174,10 +173,28 @@ lines(bonoloperf$Page, type="o", pch=22, lty=2, col=plot_colors[2])
 title(xlab="Files in directory")
 title(ylab="Time (seconds)")
 legend(1, 10, c("Initial Load", "Page Load"), cex=0.7, col=plot_colors, pch=21:22, lty=1:2)
+box("figure", "solid")
+@  
+\end{center}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+<<eval-ux-ci, fig=TRUE, echo=FALSE, height=2.5, width=4>>=
+bonoloci <- read.table("bonoloci.dat", header=T, sep="\t")
+par(xpd=T, mar=par()$mar+c(0,0.5,0,5), cex=0.7)
+barplot(as.matrix(bonoloci), family="serif", xlab="Average UX ratings", ylab="Survey Participants", ylim=c(0,25), col=rainbow(5), cex.axis=0.7, las=1, names.arg=c("Interest/\nEnjoyment", "Perceived\nCompetence", "Value/\nUsefulness"), cex=0.7)
+op <- par(family = "serif")
+legend(4,22, c("Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"), cex=0.6, fill=rainbow(5));
 box("inner", "solid")
 @  
 \end{center}
+\end{frame}
 
+\begin{frame}
+\begin{center}
+\includegraphics[width=0.9\textwidth, height=0.9\textheight]{hierarchical-structure.pdf}
+\end{center}
 \end{frame}
 
 \end{document}
