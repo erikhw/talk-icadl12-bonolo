@@ -11,14 +11,14 @@ bonoloci <- read.table("../bonoloci.dat", header=T, sep="\t")
 # define plot area
 par(xpd=T, mar=c(4,4,1,12), cex=0.60)
 barplot(as.matrix(bonoloci), beside=FALSE,
-	ylim=c(0,24), col=rainbow(5), las=1, 
+	ylim=c(0,25), col=rainbow(5), las=1, 
 	names.arg=
 	  c("Interest/Enjoyment", 
 	    "Perceived Competence", 
 	    "Value/Usefulness"),
 xlab="Average UX Ratings", ylab="Survey Participants", axes=FALSE, ann=FALSE)
-axis(2, las=1, at=seq(0, 24, by=6))
-legend(3.95,22, c("Strongly Agree", "Agree", 
+axis(2, las=1, at=seq(0, 25, by=5))
+legend(3.95,24, c("Strongly Agree", "Agree", 
 	       "Neutral", "Disagree", 
 	       "Strongly Disagree"), 
        fill=rainbow(5), bty="o")

@@ -11,7 +11,7 @@ bonoloperf <- read.table("../bonoloperf.dat", header=T, sep="\t")
 # define plot area
 par(xpd=T, mar=c(4,4,1,5), cex=0.60)
 plot_colors <- c("blue", "red")
-plot(bonoloperf$Initial, type="o", col=plot_colors[1], ylim=c(0,10), 
+plot(bonoloperf$Initial, type="o", col=plot_colors[1], ylim=c(0,9.63), 
      axes=FALSE, ann=FALSE)
 axis(1, at=1:5, lab=c("1,024", "2,048", "4,096", "8,192", "16,384"))
 axis(2, las=1, at=seq(0, 10, by=2))
