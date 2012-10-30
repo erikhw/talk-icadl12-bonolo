@@ -1,0 +1,26 @@
+***********************
+      Version 1.2      
+***********************
+
+1. Changed various blue colours to the official OU values  
+	
+2. Added two new logo options:
+a) titlepagefooterlogo : sets the logo inside the footer
+	on the front page 
+b) ordinarypageslogo   : sets the logo inside the right top
+	corner of all slides other than the title page
+
+***********************
+      Version 1.1      
+***********************
+
+1. Added the pagecounter flag to the options of the theme. 
+Setting the flag to true produces the current slide
+number and total slide number. Setting it to false
+leave that place blank.
+
+2. Add two new color variable to the theme file:
+a) bgcol    : specifies the color of the background
+b) maintext : specifies the color of main text
+
+

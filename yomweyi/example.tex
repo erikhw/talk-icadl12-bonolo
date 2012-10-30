@@ -1,0 +1,346 @@
+% Copyright 2009 by Tomasz Mazur
+%
+% This file may be distributed and/or modified in all ways.
+
+
+\documentclass[xcolor=pdftex,t,11pt]{beamer}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%       SET OPTIONS BELOW        %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usetheme[
+% Toggle showing page counter
+pagecounter=true,
+%
+% String to be used between the current page and the
+% total page count, e.g. of, /, from, etc.
+pageofpages=of,
+%
+% Defines the shape of bullet points. Available options: circle, square
+bullet=circle,
+%
+% Show a line below the frame title. 
+titleline=true,
+%
+% Set the style of the title page (true for fancy, false for standard)
+alternativetitlepage=true,
+%
+% Institution logo for fancy title page.
+% Comment out to remove the logo from the title page.
+% IMPORTANT: THERE IS A BUG IN SOME VERSIONS OF PDFLATEX AND FONTS
+% ON THE LOGOS ARE NOT RENDERED PROPERLY. IN SUCH A CASE ADD `2` 
+% TO THE NAME OF THE LOGO, E.G. comlab2 INSTEAD OF comlab
+titlepagelogo=images/titlepage/ou,
+%
+% Department footer logo for fancy title page
+% Comment out to remove the logo from the footer of the title page/
+% IMPORTANT: THERE IS A BUG IN SOME VERSIONS OF PDFLATEX AND FONTS
+% ON THE LOGOS ARE NOT RENDERED PROPERLY. IN SUCH A CASE ADD `2` 
+% TO THE NAME OF THE LOGO, E.G. comlab2 INSTEAD OF comlab
+%titlepagefooterlogo=images/titlepage/comlab,
+%
+% Institution/department logo for ordinary slides
+% Comment this line out to remove the logo from all the pages.
+% Available logos are: ou, comlab, comlabinline, comlabou
+% IMPORTANT: THERE IS A BUG IN SOME VERSIONS OF PDFLATEX AND FONTS
+% ON THE LOGOS ARE NOT RENDERED PROPERLY. IN SUCH A CASE ADD `2` 
+% TO THE NAME OF THE LOGO, E.G. comlab2 INSTEAD OF comlab
+ordinarypageslogo=images/comlab,
+%
+%
+% Add watermark in the bottom right corner
+%watermark=<filename>,
+%
+% Set the height of the watermark.
+%watermarkheight=100pt,
+%
+% The watermark image is 4 times bigger than watermarkheight.
+%watermarkheightmult=4,
+]{Torino}
+
+% Select color theme. Available options are:
+% mininmal, greenandblue, blue, red
+\usecolortheme{blue}
+
+%Select different font themes.Available options are:
+% default, serif, structurebold, structureitalicserif, structuresmallcapsserif
+\usefonttheme{structurebold}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%       PRESENTATION INFO        %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\author{Tomasz Mazur}
+\title{Slideshow presentations using \LaTeX{}}
+%\subtitle{}
+\institute{Oxford University}
+\date{\today}
+
+\begin{document}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%       SLIDE DEFINITIONS        %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[plain]
+	\titlepage
+\end{frame}
+
+\begin{frame}{Outline}
+	\tableofcontents
+\end{frame}
+
+
+\section{Introduction}
+
+
+\subsection{What is this?}
+
+\begin{frame}[fragile]
+\frametitle{Introduction}
+\begin{itemize}
+\item \alert{Creating presentations using \LaTeX{} is straightforward...}
+\item ...with Beamer, a class for creating slides
+\item should be already installed with most \LaTeX{} distributions, but can be obtained from \verb!http://latex-beamer.sourceforge.net/!
+\item Beamer documentation available from \verb!	http://www.ctan.org/tex-archive/macros/latex/! \verb!	contrib/beamer/doc/beameruserguide.pdf!
+\item This is a modification of Marco Barision's Torino theme 
+\item It aims to produce slides that are \emph{pretty}, but easily \emph{readable} and with \emph{large content area}
+\item Most of standard Beamer commands are supported
+\end{itemize}
+\end{frame}
+
+\subsection{Creating presentation overview}
+
+\begin{frame}[fragile]
+\frametitle{Creating your presentation}
+\begin{itemize}
+\item You can simply modify this file
+\item Set the configuration options at the top of the document for
+\begin{itemize}
+	\item colours
+	\item fonts
+	\item title page style
+	\item logos
+	\item bullet points shapes, etc.
+\end{itemize}
+\item Compile using \verb!pdflatex! (recommended), but \verb!latex! works too
+\item Due to format restrictions, graphics may be slightly misaligned in PS files, use PDF instead
+\end{itemize}
+\end{frame}
+
+
+\section{Modifying themes, colours and fonts}
+
+
+\begin{frame}[fragile]
+\frametitle{Themes and colours}
+\begin{itemize}
+\item There are four basic colour themes: 
+\begin{itemize}
+	\item \verb!minimal! (least eye-candy, good for longer presentations)
+	\item \verb!greenandblue! 
+	\item \verb!blue! (good for low quality projectors)
+	\item \verb!red! (American-style)
+\end{itemize}
+\item Themes define the colours of the background, slide decorations, slide titles, main text, bullet points, etc.
+\item Edit themes by modifying the \verb!beamercolortheme*.sty! file
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Fonts}
+\begin{itemize}
+\item There are five font themes: 
+\begin{itemize}
+	\item \verb!default! (sans serif)
+	\item \verb!serif! (used for this presentation) 
+	\item \verb!structurebold! (titles, headlines, etc.\ are typeset in a bold font)
+	\item \verb!structureitalicserif! (titles, headlines, etc.\ are typeset in an italics serif font)
+	\item \verb!structuresmallcapsserif! (titles, headlines, etc.\ are typeset in a small caps serif font)
+\end{itemize}
+\item Change the document-wise font size to 8, 9 , 10, 11 (default), 12, 14, 17 or 20 points in the options of \verb!\documentclass!, e.g. \verb!\documentclass[12pt]{beamer}!
+\item Colour text using \verb!\textcolor{<<colour>>}{<<text>>}!
+\item The \verb!\alert{<<text>>}! command colours text red
+\end{itemize}
+\end{frame}
+
+
+\section{Adding things}
+
+
+\subsection{Adding new slides}
+
+\begin{frame}[fragile,allowframebreaks]
+\frametitle{Adding slides}
+\framesubtitle{...with subheadings}
+\begin{itemize}
+\item A slide is created using the following code:
+	\begin{verbatim}
+	 \begin{frame}[<<options>>]
+	   \frametitle{<<slide title>>}
+	   <<contents>>
+	 \end{frame}
+	\end{verbatim}
+\item The possible options include:
+\begin{itemize}
+	\item \verb!plain! removes all slide decorations (useful for larger images)
+	\item \verb!c! and \verb!b! align contents of the slide in the middle or bottom (default alignment is top, but this can easily be changed in the document class options)
+	\item \verb!fragile! is necessary for slides that use the \verb!verbatim!
+	\item \verb!shrink! automagically makes the contents fit on one slide
+	\item \verb!allowframebrakes! splits contents of a frame if it does not fit
+\end{itemize}
+\item The \verb!\framesubtitle! creates a secondary slide title
+\item The first slide is best created using the \verb! \begin{frame}[plain] \titlepage \end{frame}! commands.
+\end{itemize}
+\end{frame}
+
+\subsection{Table of contents}
+
+\begin{frame}
+\frametitle{We are here now...}
+	\tableofcontents[currentsection, hideallsubsections]
+\end{frame}
+
+\begin{frame}
+\frametitle{...in fact, even here}
+	\tableofcontents[currentsection, currentsubsection]
+\end{frame}
+
+\begin{frame}[fragile,shrink]
+\frametitle{Table of contents}
+\begin{itemize}
+\item Create outlines using \verb!\tableofcontents[<<options>>]!
+\item The possible options include:
+\begin{itemize}
+	\item \verb!currentsection! (all sections but current are greyed out)
+        \item \verb!currentsubsection! (all subsections but current are greyed out)
+ 	\item \verb!hideallsubsections! (all subsections are hidden)
+	\item \verb!hideothersubsections! (all subsections of sections other than the current are hidden)
+  	\item \verb!pausesections! (shows the table of contents incrementally)
+	\item \verb!pausesubsections! (finer increments than \verb!\pausesections!)
+	\item \verb!sections={<2-3>}! (only sections 2 and 3 are displayed)
+	\item \verb!sectionstyle=<<1>>/<<2>>! (define style of current section (\verb!<<1>>!), other sections (\verb!<<2>>!) using \verb!show!, \verb!shaded! and \verb!hide!, e.g. \verb!sectionstyle=shaded/show!)
+• 	\item \verb!subsectionstyle=<1>/<2>/<3>! (define style for current subsection (\verb!<<1>>!), other subsections in current section (\verb!<<2>>!), subsections in other sections (\verb!<<3>>!))
+\end{itemize}
+\item The commands \verb!\section!, \verb!\subsection!, etc.\ make a structure for tables of contents (outlines are independent of slide titles)
+\end{itemize}
+\end{frame}
+
+\subsection{Using boxes and images}
+
+\begin{frame}[fragile]
+\frametitle{Boxes}
+\begin{itemize}
+\item Use the \verb!\begin{<<env>>} ... \end{<<env>>}! command for predefined environments (e.g.\ \verb!definition!, \verb!theorem!, \verb!proof!, \verb!example!, \verb!corollary!, etc.) - not too pretty
+\item Alternatively, use fancy boxes
+\item Use the \verb!columns! environments for multiple columns
+\end{itemize}
+\vspace{-5ex}
+\begin{columns}
+\column{0.5\textwidth}
+\begin{theorem}
+	If\ $P$, then $Q$.
+\end{theorem}
+\setbeamercolor{uppercol}{fg=white,bg=red!54!black}
+\setbeamercolor{lowercol}{fg=black,bg=red!10}
+\begin{beamerboxesrounded}[upper=uppercol,lower=lowercol,shadow=true]{Theorem}
+  If\ $P$, then $Q$.
+\end{beamerboxesrounded}
+\column{0.5\textwidth}
+\begin{example}
+	Consider $P=...$
+\end{example}
+\setbeamercolor{uppercol}{fg=white,bg=green!40!black}
+\setbeamercolor{lowercol}{fg=black,bg=green!10}
+\begin{beamerboxesrounded}[upper=uppercol,lower=lowercol,shadow=true]{Proof}
+  Suppose that $P$ holds...
+\end{beamerboxesrounded}
+\end{columns}
+\begin{columns}
+\column{\textwidth}
+\setbeamercolor{uppercol}{fg=white,bg=blue!40!black}
+\setbeamercolor{lowercol}{fg=black,bg=blue!10}
+\begin{beamerboxesrounded}[upper=uppercol,lower=lowercol,shadow=true]{Corollary}
+  $Q$ holds
+\end{beamerboxesrounded}
+\end{columns}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Including images}
+\begin{itemize}
+\item Include images using the standard \verb!figure! environment
+\item Beamer supports \verb!\includegraphics!, \verb!\pgfimage!, \verb!\pgfuseimage! and more
+\end{itemize}
+\begin{figure}
+\includegraphics[height=100pt]{images/titlepage/ou}
+\caption{Oxford University logo}
+\end{figure}
+\end{frame}
+
+
+\section{Overlays}
+
+
+\begin{frame}[fragile]
+\frametitle{Simple overlays}
+\begin{itemize}
+\item<1-> Use \verb!\begin{itemize} \item<x-> \end{itemize}! to display bullet points incrementally
+\item<2-> Alternatively, use the \verb!\pause! command, which displays contents of the slide up to the first marker, then up to the second marker, etc.
+\end{itemize}
+\pause
+\begin{table}
+\begin{tabular}{lcccc}
+        & A & B & C & D \\\hline
+  X     & 1 & 2 & 3 & 4 \pause\\
+  Y     & 3 & 4 & 5 & 6 \pause\\
+  Z     & 5 & 6 & 7 & 8
+\end{tabular}
+\end{table}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{More complex overlays}
+\begin{itemize}
+\item The \verb!\uncover<x->! command orders the displaying of items.
+\end{itemize}
+\begin{semiverbatim}
+\uncover<1->{\alert<0>{class helloWorld}}
+\uncover<1->{\alert<0>{\{}}
+\uncover<2->{\alert<2>{  public static void main(String args[])}}
+\uncover<0->{\alert<0>{  \{}}
+\uncover<3->{\alert<3>{    System.out.println("Hello World!");}}
+\uncover<1->{\alert<0>{  \}}}
+\uncover<1->{\alert<0>{\}}}
+\end{semiverbatim}
+\begin{itemize}
+\item \verb!\alert<x>{<<text>>}! \alert<4->{colours text red on the $x$-th iteration of displaying items}
+\end{itemize}
+\end{frame}
+
+
+\section{What else is possible}
+
+
+\subsection{Making most of the Beamer class}
+
+\begin{frame}[fragile]
+\frametitle{What next}
+\begin{itemize}
+\item<1-> This presentation uses only a fraction of Beamer's capabilities
+\item<1-> See the Beamer User Guide to learn how to: 
+\begin{itemize}
+\item<2-> create slide transitions
+\item<3-> add notes
+\item<4-> print handouts
+\item<5-> add multimedia (sound, video)
+\item<6-> ...and much more!
+\end{itemize}
+\item<7-> Alternatively, see \verb! http://www.matthiaspospiech.de/latex/vorlagen/! \verb! beamer/content/beamer-examples/!\\ for a shorter, example-based guide
+\end{itemize}
+\end{frame}
+\end{document}

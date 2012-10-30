@@ -1,0 +1,351 @@
+% Copyright 2009 by Tomasz Mazur
+%
+% This file may be distributed and/or modified in all ways.
+
+
+\documentclass[xcolor=pdftex,t,11pt]{beamer}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%       SET OPTIONS BELOW        %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usetheme[
+% Toggle showing page counter
+pagecounter=true,
+%
+% String to be used between the current page and the
+% total page count, e.g. of, /, from, etc.
+pageofpages=of,
+%
+% Defines the shape of bullet points. Available options: circle, square
+bullet=circle,
+%
+% Show a line below the frame title. 
+titleline=true,
+%
+% Set the style of the title page (true for fancy, false for standard)
+alternativetitlepage=true,
+%
+% Institution logo for fancy title page.
+% Comment out to remove the logo from the title page.
+% IMPORTANT: THERE IS A BUG IN SOME VERSIONS OF PDFLATEX AND FONTS
+% ON THE LOGOS ARE NOT RENDERED PROPERLY. IN SUCH A CASE ADD `2` 
+% TO THE NAME OF THE LOGO, E.G. comlab2 INSTEAD OF comlab
+%titlepagelogo=images/titlepage/ou, % Phiri --October 30, 2012. Commented out
+%
+% Department footer logo for fancy title page
+% Comment out to remove the logo from the footer of the title page/
+% IMPORTANT: THERE IS A BUG IN SOME VERSIONS OF PDFLATEX AND FONTS
+% ON THE LOGOS ARE NOT RENDERED PROPERLY. IN SUCH A CASE ADD `2` 
+% TO THE NAME OF THE LOGO, E.G. comlab2 INSTEAD OF comlab
+%titlepagefooterlogo=images/titlepage/comlab,
+%
+% Institution/department logo for ordinary slides
+% Comment this line out to remove the logo from all the pages.
+% Available logos are: ou, comlab, comlabinline, comlabou
+% IMPORTANT: THERE IS A BUG IN SOME VERSIONS OF PDFLATEX AND FONTS
+% ON THE LOGOS ARE NOT RENDERED PROPERLY. IN SUCH A CASE ADD `2` 
+% TO THE NAME OF THE LOGO, E.G. comlab2 INSTEAD OF comlab
+%ordinarypageslogo=images/comlab, % phiri --October 30, 2012. Commented out
+%
+%
+% Add watermark in the bottom right corner
+%watermark=<filename>,
+%
+% Set the height of the watermark.
+%watermarkheight=100pt,
+%
+% The watermark image is 4 times bigger than watermarkheight.
+%watermarkheightmult=4,
+]{Torino}
+
+% Select color theme. Available options are:
+% mininmal, greenandblue, blue, red
+\usecolortheme{minimal}
+
+%Select different font themes.Available options are:
+% default, serif, structurebold, structureitalicserif, structuresmallcapsserif
+\usefonttheme{structurebold}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%       PRESENTATION INFO        %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\author{Lighton Phiri \and Kyle Williams \and Miles Robinson\\Stuart Hammar \and Hussein Suleman}
+\title{Bonolo\symbolfootnote[2, frame]{\tiny Sotho word meaning easy.}}
+\subtitle{A General Digital Library System for File-based Collections}
+\institute{Digital Libraries Laboratory\\Department of Computer Science\\University of Cape Town}
+\date{November 13, 2012}
+
+% Footer symbols
+\long\def\symbolfootnote[#1]#2{\begingroup%
+\def\thefootnote{\fnsymbol{footnote}}\footnote[#1]{#2}\endgroup}
+
+%
+%Replace default bullets to square bullets
+%
+\setbeamertemplate{items}[square]
+
+% Longtable lets you have tables that span multiple pages.
+\usepackage{longtable}
+
+%%% For tables
+\usepackage{multirow}
+
+% Rotating table headers/labels
+\usepackage{rotating}
+
+%package to enable tikZ
+\usepackage{tikz}
+
+\begin{document}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%       SLIDE DEFINITIONS        %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[plain]
+	\titlepage
+\end{frame}
+
+\begin{frame}{Outline}
+	\tableofcontents
+\end{frame}
+
+
+\section{Introduction}
+
+
+\subsection{What is this?}
+
+\begin{frame}[fragile]
+\frametitle{Introduction}
+\begin{itemize}
+\item \alert{Creating presentations using \LaTeX{} is straightforward...}
+\item ...with Beamer, a class for creating slides
+\item should be already installed with most \LaTeX{} distributions, but can be obtained from \verb!http://latex-beamer.sourceforge.net/!
+\item Beamer documentation available from \verb!	http://www.ctan.org/tex-archive/macros/latex/! \verb!	contrib/beamer/doc/beameruserguide.pdf!
+\item This is a modification of Marco Barision's Torino theme 
+\item It aims to produce slides that are \emph{pretty}, but easily \emph{readable} and with \emph{large content area}
+\item Most of standard Beamer commands are supported
+\end{itemize}
+\end{frame}
+
+\subsection{Creating presentation overview}
+
+\begin{frame}[fragile]
+\frametitle{Status Quo - DL Architectural Frameworks}
+\begin{itemize}
+\item Warwick Framework
+\item Khan/Wilensky Framework
+\item DELOS DL Reference Model
+\item 5S Framework
+\end{itemize}
+\end{frame}
+
+
+\section{Modifying themes, colours and fonts}
+
+
+\begin{frame}[fragile]
+\frametitle{Status Quo - DL Software}
+\begin{itemize}
+\item Splash screen with prominent DL FLOSS software
+\begin{itemize}
+	\item Common elements
+	\item Fundemental principles
+	\item Suitability
+	\item Cost implications
+\end{itemize}
+\item Additional information $\cdots$
+\item Additional information $\cdots$
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Motivation}
+\begin{itemize}
+\item There are five font themes: 
+\begin{itemize}
+	\item \verb!default! (sans serif)
+	\item \verb!serif! (used for this presentation) 
+	\item \verb!structurebold! (titles, headlines, etc.\ are typeset in a bold font)
+	\item \verb!structureitalicserif! (titles, headlines, etc.\ are typeset in an italics serif font)
+	\item \verb!structuresmallcapsserif! (titles, headlines, etc.\ are typeset in a small caps serif font)
+\end{itemize}
+\item Change the document-wise font size to 8, 9 , 10, 11 (default), 12, 14, 17 or 20 points in the options of \verb!\documentclass!, e.g. \verb!\documentclass[12pt]{beamer}!
+\item Colour text using \verb!\textcolor{<<colour>>}{<<text>>}!
+\item The \verb!\alert{<<text>>}! command colours text red
+\end{itemize}
+\end{frame}
+
+\subsection{Using boxes and images}
+
+\begin{frame}[fragile]
+\frametitle{Design Principles}
+\begin{itemize}
+\item Exploratory Study
+\begin{itemize}
+\item Objective of study
+\item 
+\end{itemize}
+\item Grounded Theory approach
+\begin{itemize}
+\item Data collection involved meta-analysis of twelve (12) software tools
+\item Data analysis yielded eight (8) design principles
+\end{itemize}
+\item Outcome of study phase yieded eight (8) design principles
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Design Principles}
+\begin{itemize}
+\item Hardware and/or software platform independence
+\item Heterogeneous object, metadata and service integration
+\item Support for community and international standards
+\item Flexible design to facilitate extensibility
+\item Minimalist design approach
+\item Simplified preservation process
+\item Structured organisation of data
+\item Design for least possible resources
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{System Design - Overview}
+\begin{itemize}
+\item Architectural diagram goes here
+\end{itemize}
+\begin{figure}
+%\includegraphics[height=100pt]{images/titlepage/ou}
+%\caption{Oxford University logo}
+\end{figure}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{System Design - End User Interface}
+\begin{itemize}
+\item Architectural diagram goes here
+\end{itemize}
+\begin{figure}
+%\includegraphics[height=100pt]{images/titlepage/ou}
+%\caption{Oxford University logo}
+\end{figure}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{System Design - Curator Interface}
+\begin{itemize}
+\item Architectural diagram goes here
+\end{itemize}
+\begin{figure}
+%\includegraphics[height=100pt]{images/titlepage/ou}
+%\caption{Oxford University logo}
+\end{figure}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{System Design - Repository}
+\begin{itemize}
+\item Architectural diagram goes here
+\end{itemize}
+\begin{figure}
+%\includegraphics[height=100pt]{images/titlepage/ou}
+%\caption{Oxford University logo}
+\end{figure}
+\end{frame}
+
+
+\section{Overlays}
+
+
+\begin{frame}[fragile]
+\frametitle{Simple overlays}
+\begin{itemize}
+\item<1-> Use \verb!\begin{itemize} \item<x-> \end{itemize}! to display bullet points incrementally
+\item<2-> Alternatively, use the \verb!\pause! command, which displays contents of the slide up to the first marker, then up to the second marker, etc.
+\end{itemize}
+\pause
+\begin{table}
+\begin{tabular}{lcccc}
+        & A & B & C & D \\\hline
+  X     & 1 & 2 & 3 & 4 \pause\\
+  Y     & 3 & 4 & 5 & 6 \pause\\
+  Z     & 5 & 6 & 7 & 8
+\end{tabular}
+\end{table}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{UX Evaluation - UI Lab Experiment}
+\begin{itemize}
+\item Objective
+\item Target Group
+\item Approach
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{UX Evaluation - UI Experiment Results}
+\centering
+\input{plots/evaluation-ux-ui.tex}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{UX Evaluation - CI Online Experiment}
+\begin{itemize}
+\item Objective
+\item Target Group
+\item Approach
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{UX Evaluation - CI Experiment Results}
+\centering
+\input{plots/evaluation-ux-ci.tex}
+\end{frame}
+
+
+\section{What else is possible}
+
+
+\subsection{Making most of the Beamer class}
+
+\begin{frame}[fragile]
+\frametitle{Perf Evaluation - Repo Lab Experiment}
+\begin{itemize}
+\item Objective
+\item Target Group
+\item Approach
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Perf Evaluation - Repo Experiment Results}
+\centering
+\input{plots/evaluation-perf.tex}
+\end{frame}
+
+\begin{frame}[fragile]
+%\frametitle{Thank You}
+\begin{center}
+\bigskip
+\textbf{\fontsize{18}{18}\selectfont Questions?} \\
+\vspace{\stretch{0.5}}
+\textbf{\fontsize{18}{18}\selectfont Additional Information} \\
+\bigskip
+\textbf{\fontsize{18}{18}\selectfont \url{http://dl.cs.uct.ac.za}}
+\end{center}
+\end{frame}
+
+\end{document}
