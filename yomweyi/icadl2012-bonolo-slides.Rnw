@@ -99,7 +99,6 @@ alternativetitlepage=true,
 %package to enable tikZ
 \usepackage{tikz}
 
-\usepackage{Sweave}
 \begin{document}
 
 
