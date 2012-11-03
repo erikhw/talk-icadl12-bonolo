@@ -99,6 +99,9 @@ alternativetitlepage=true,
 %package to enable tikZ
 \usepackage{tikz}
 
+% Footer collision with page numbers
+\addtobeamertemplate{footnote}{}{\vspace{2ex}}
+
 \usepackage{Sweave}
 \begin{document}
 
@@ -219,7 +222,7 @@ alternativetitlepage=true,
 
 
 \begin{frame}[fragile]
-\frametitle{System Design - Overview}
+\frametitle{Prototype Implementation - Bonolo}
 \begin{itemize}
 \item Architectural diagram goes here
 \end{itemize}
@@ -230,24 +233,18 @@ alternativetitlepage=true,
 \end{frame}
 
 \begin{frame}[fragile]
-\frametitle{System Design - End User Interface}
-\begin{itemize}
-\item Architectural diagram goes here
-\end{itemize}
+\frametitle{End User Interface - Item View}
 \begin{figure}
-%\includegraphics[height=100pt]{images/titlepage/ou}
-%\caption{Oxford University logo}
+\includegraphics{images/icadl2012_bonolo_end_user_interface.png}
+%\caption{End User Interface}
 \end{figure}
 \end{frame}
 
 \begin{frame}[fragile]
-\frametitle{System Design - Curator Interface}
-\begin{itemize}
-\item Architectural diagram goes here
-\end{itemize}
+\frametitle{Curator Interface - Item View}
 \begin{figure}
-%\includegraphics[height=100pt]{images/titlepage/ou}
-%\caption{Oxford University logo}
+\includegraphics{images/bonolo-ci-item.png}
+%\caption{Curator Interface}
 \end{figure}
 \end{frame}
 
@@ -284,7 +281,7 @@ alternativetitlepage=true,
 \end{frame}
 
 \begin{frame}[fragile]
-\frametitle{UX Evaluation - UI Lab Experiment}
+\frametitle{End User Interface UX - Lab Experiment}
 \begin{itemize}
 \item Objective
 \item Target Group
@@ -294,23 +291,37 @@ alternativetitlepage=true,
 
 
 \begin{frame}[fragile]
-\frametitle{UX Evaluation - UI Experiment Results}
+\frametitle{End User Interface UX - Experiment Results}
 \centering
 \input{plots/evaluation-ux-ui.tex}
 \end{frame}
 
 \begin{frame}[fragile]
-\frametitle{UX Evaluation - CI Online Experiment}
+\frametitle{Curator Interface UX - Online Experiment}
 \begin{itemize}
-\item Objective
+\item Rationale
+\begin{itemize}
+\item User experience working with curation features
+\end{itemize}
 \item Target Group
+\begin{itemize}
+\item Individuals with no experience working with DL tools
+\item Social networking site recruitment\footnote{\tiny Facebook, Twitter,
+Google$+$}
+\end{itemize}
 \item Approach
+\begin{itemize}
+\item Intrinsic Motivation Inventory
+\item Five (5) minute 'HOWTO' screencast
+\item Curation tasks with two datasets
+\item Online questionnaire
+\end{itemize}
 \end{itemize}
 \end{frame}
 
 
 \begin{frame}[fragile]
-\frametitle{UX Evaluation - CI Experiment Results}
+\frametitle{Curator Interface UX - Experiment Results}
 \centering
 \input{plots/evaluation-ux-ci.tex}
 \end{frame}
@@ -322,7 +333,7 @@ alternativetitlepage=true,
 \subsection{Making most of the Beamer class}
 
 \begin{frame}[fragile]
-\frametitle{Perf Evaluation - Repo Lab Experiment}
+\frametitle{Repository Performance - Lab Experiment}
 \begin{itemize}
 \item Objective
 \item Target Group
@@ -332,9 +343,31 @@ alternativetitlepage=true,
 
 
 \begin{frame}[fragile]
-\frametitle{Perf Evaluation - Repo Experiment Results}
+\frametitle{Repository Performance - Experiment Results}
 \centering
 \input{plots/evaluation-perf.tex}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Conclusion}
+\begin{itemize}
+\item Experimental results look promising
+\begin{itemize}
+\item Medium-sized collections
+\end{itemize}
+\item Future Work
+\begin{itemize}
+\item Extensibility
+\item Scalability
+\begin{itemize}
+\item NDLTD Union Catalog (\~{}2 million records)
+\end{itemize}
+\item Reference implementation
+\begin{itemize}
+\item Design principles
+\end{itemize}
+\end{itemize}
+\end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]
