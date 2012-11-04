@@ -3,7 +3,12 @@
 % This file may be distributed and/or modified in all ways.
 
 
-\documentclass[xcolor=pdftex,t,11pt]{beamer}
+\documentclass[xcolor=dvitex,t,11pt]{beamer}
+%\documentclass[t,dvipsnames,11pt]{beamer}
+
+% Latex Draw assets
+\usepackage[usenames,dvipsnames]{pstricks}
+%\usepackage{pstricks, pst-all, pstricks-add}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %       SET OPTIONS BELOW        %
@@ -61,7 +66,7 @@ alternativetitlepage=true,
 
 % Select color theme. Available options are:
 % mininmal, greenandblue, blue, red
-\usecolortheme{minimal}
+\usecolortheme{blue}
 
 %Select different font themes.Available options are:
 % default, serif, structurebold, structureitalicserif, structuresmallcapsserif
@@ -72,15 +77,19 @@ alternativetitlepage=true,
 %       PRESENTATION INFO        %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+% Footer symbols
+\long\def\symbolfootnote[#1]#2{%
+\begingroup
+\def\thefootnote{\fnsymbol{footnote}}\footnote[#1]{#2}
+\endgroup
+}
+
 \author{Lighton Phiri \and Kyle Williams \and Miles Robinson\\Stuart Hammar \and Hussein Suleman}
 \title{Bonolo\symbolfootnote[2, frame]{\tiny Sotho word meaning easy.}}
 \subtitle{A General Digital Library System for File-based Collections}
 \institute{Digital Libraries Laboratory\\Department of Computer Science\\University of Cape Town}
 \date{November 13, 2012}
-
-% Footer symbols
-\long\def\symbolfootnote[#1]#2{\begingroup%
-\def\thefootnote{\fnsymbol{footnote}}\footnote[#1]{#2}\endgroup}
 
 %
 %Replace default bullets to square bullets
@@ -197,7 +206,7 @@ alternativetitlepage=true,
 \end{itemize}
 \item Grounded Theory approach
 \begin{itemize}
-\item Data collection involved meta-analysis of twelve (12) software tools
+\item Data collection involved meta-analysis of existing tools
 \item Data analysis yielded eight (8) design principles
 \end{itemize}
 \item Outcome of study phase yieded eight (8) design principles
@@ -207,14 +216,14 @@ alternativetitlepage=true,
 \begin{frame}[fragile]
 \frametitle{Design Principles}
 \begin{itemize}
+\item Design for least possible resources
+\item Flexible design to facilitate extensibility
 \item Hardware and/or software platform independence
 \item Heterogeneous object, metadata and service integration
-\item Support for community and international standards
-\item Flexible design to facilitate extensibility
 \item Minimalist design approach
 \item Simplified preservation process
 \item Structured organisation of data
-\item Design for least possible resources
+\item Support for community and international standards
 \end{itemize}
 
 \end{frame}
@@ -222,39 +231,90 @@ alternativetitlepage=true,
 
 \begin{frame}[fragile]
 \frametitle{Prototype Implementation - Bonolo}
+\begin{figure}
+\centering
+\framebox[\textwidth]{%
+\input{images/latexdraw/icadl2012-bonolo-design.tex}
+}
+\end{figure}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Repository - Design}
+\begin{figure}
+\centering
+\framebox[\textwidth]{%
+\input{images/latexdraw/icadl2012-bonolo-repository.tex}
+}
+\end{figure}
 \begin{itemize}
-\item Architectural diagram goes here
+\item Hierarchical structure
+\item Digital content and metadata stored on file system
+\item Objects stored with corresponding metadata record
+\item Metadata records encoded using XML
 \end{itemize}
 \begin{figure}
 %\includegraphics[height=100pt]{images/titlepage/ou}
 %\caption{Oxford University logo}
 \end{figure}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{End User Interface - Functionality}
+\begin{figure}
+\centering
+\framebox[\textwidth]{%
+\input{images/latexdraw/icadl2012-bonolo-clients-public.tex}
+}
+%\caption{End User Interface}
+\end{figure}
+\begin{itemize}
+\item Authentication
+\item Browse
+\item Commenting
+\item Search
+\item Tagging
+\end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]
 \frametitle{End User Interface - Item View}
 \begin{figure}
-\includegraphics{images/icadl2012_bonolo_end_user_interface.png}
+\centering
+\framebox[\textwidth]{%
+\includegraphics{images/icadl2012-bonolo-ui-item.eps}
+}
 %\caption{End User Interface}
 \end{figure}
 \end{frame}
 
 \begin{frame}[fragile]
-\frametitle{Curator Interface - Item View}
+\frametitle{Curator Interface - Functionality}
 \begin{figure}
-\includegraphics{images/bonolo-ci-item.png}
-%\caption{Curator Interface}
+\centering
+\framebox[\textwidth]{%
+\input{images/latexdraw/icadl2012-bonolo-clients-curator.tex}
+}
+%\caption{End User Interface}
 \end{figure}
+\begin{itemize}
+\item Authentication
+\item Batch import and export
+\item Browse
+\item Collection and Object management (add, edit, delete)
+\item Indexing
+\item Search
+\end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]
-\frametitle{System Design - Repository}
-\begin{itemize}
-\item Architectural diagram goes here
-\end{itemize}
+\frametitle{Curator Interface - Item View}
 \begin{figure}
-%\includegraphics[height=100pt]{images/titlepage/ou}
-%\caption{Oxford University logo}
+\centering
+\framebox[\textwidth]{%
+\includegraphics{images/icadl2012-bonolo-ci-item.eps}
+}
+%\caption{Curator Interface}
 \end{figure}
 \end{frame}
 
@@ -305,8 +365,7 @@ alternativetitlepage=true,
 \item Target Group
 \begin{itemize}
 \item Individuals with no experience working with DL tools
-\item Social networking site recruitment\footnote{\tiny Facebook, Twitter,
-Google$+$}
+\item Social networking site recruitment
 \end{itemize}
 \item Approach
 \begin{itemize}
@@ -349,24 +408,36 @@ Google$+$}
 
 \begin{frame}[fragile]
 \frametitle{Conclusion}
+
 \begin{itemize}
+
 \item Experimental results look promising
 \begin{itemize}
+\item Effectiveness
+\item Usability
 \item Medium-sized collections
 \end{itemize}
-\item Future Work
+
+\item Work in progress
 \begin{itemize}
-\item Extensibility
+\item Evaluation
+\begin{itemize}
+\item Flexibility
 \item Scalability
-\begin{itemize}
-\item NDLTD Union Catalog (\~{}2 million records)
 \end{itemize}
+\end{itemize}
+
+\item Future work
+\begin{itemize}
 \item Reference implementation
-\begin{itemize}
+\begin{itemize} 
 \item Design principles
+\item Extensibility
 \end{itemize}
 \end{itemize}
+
 \end{itemize}
+
 \end{frame}
 
 \begin{frame}[fragile]

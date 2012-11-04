@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+    xmlns:latexdraw="http://latexdraw.sourceforge.net/namespaces/latexdraw"
+    version="1.1" baseProfile="full">
+    <defs/>
+    <g>
+        <g latexdraw:type="rectangle" id="id691">
+            <rect x="551.0" y="131.0" width="398.0" height="58.0"
+                latexdraw:borderPos="outer" stroke-width="2.0"
+                stroke="black" fill="none"/>
+        </g>
+        <g latexdraw:type="line" id="id692">
+            <line x1="540.0" x2="960.0" y1="205.0" y2="205.0"
+                stroke-width="3.0" stroke="black"
+                stroke-dasharray="8.0, 8.0" latexdraw:rotationAngle="0.0"/>
+        </g>
+        <g latexdraw:type="rectangle" id="id693">
+            <rect x="551.0" y="221.0" width="398.0" height="68.0"
+                latexdraw:borderPos="outer" stroke-width="2.0"
+                stroke="black" fill="none"/>
+        </g>
+        <g latexdraw:type="rectangle" id="id694">
+            <rect x="560.75" y="228.75" width="118.5" height="22.5"
+                latexdraw:borderPos="outer" stroke-width="1.5"
+                stroke="black" fill="none"/>
+        </g>
+        <g latexdraw:type="rectangle" id="id695">
+            <rect x="690.75" y="228.75" width="118.5" height="22.5"
+                latexdraw:borderPos="outer" stroke-width="1.5"
+                stroke="black" fill="none"/>
+        </g>
+        <g latexdraw:type="rectangle" id="id696">
+            <rect x="820.75" y="228.75" width="118.5" height="22.5"
+                latexdraw:borderPos="outer" stroke-width="1.5"
+                stroke="black" fill="none"/>
+        </g>
+        <g latexdraw:type="line" id="id697">
+            <line x1="540.0" x2="960.0" y1="305.0" y2="305.0"
+                stroke-width="3.0" stroke="black"
+                stroke-dasharray="8.0, 8.0" latexdraw:rotationAngle="0.0"/>
+        </g>
+        <g latexdraw:type="text" id="id698" font-family="Dialog"
+            fill="black" font-size="14" latexdraw:x="725.0">
+            <text x="725.0" y="275.0"><![CDATA[Search]]></text>
+        </g>
+        <g latexdraw:type="text" id="id700" font-family="Dialog"
+            fill="black" font-size="14" latexdraw:x="723.0">
+            <text x="723.0" y="245.0"><![CDATA[Browse]]></text>
+        </g>
+        <g latexdraw:type="text" id="id702" font-family="Dialog"
+            fill="black" font-size="14" latexdraw:x="835.0">
+            <text x="835.0" y="245.0"><![CDATA[Commenting]]></text>
+        </g>
+        <g latexdraw:type="rectangle" id="id704">
+            <rect x="551.0" y="321.0" width="398.0" height="118.0"
+                latexdraw:borderPos="outer" stroke-width="2.0"
+                stroke="black" fill="none"/>
+        </g>
+        <g latexdraw:type="rectangle" id="id705">
+            <rect x="585.75" y="390.75" width="78.5" height="28.5"
+                transform="translate(15.0 0.0) translate(-4.393398284912109 -10.60660171508789)"
+                stroke-width="1.5" fill="#404040" stroke="#404040" latexdraw:type="shadow"/>
+            <rect x="585.75" y="390.75" width="78.5" height="28.5"
+                latexdraw:borderPos="outer" stroke-width="1.5"
+                stroke="black" fill="white"/>
+        </g>
+        <g latexdraw:type="text" id="id706" font-family="Dialog"
+            fill="black" font-size="14" latexdraw:x="592.0">
+            <text x="592.0" y="410.0"><![CDATA[Metadata]]></text>
+        </g>
+        <g latexdraw:type="text" id="id709" font-family="Dialog"
+            fill="black" font-size="17" latexdraw:x="490.0" transform="rotate(270.0) translate(-683.1484375000002 355.8359374999999)">
+            <text x="490.0" y="170.0000000000001"><![CDATA[Clients]]></text>
+        </g>
+        <g latexdraw:type="text" id="id711" font-family="Dialog"
+            fill="black" font-size="17" latexdraw:x="480.0" transform="rotate(270.0) translate(-771.7343750000002 258.4218749999999)">
+            <text x="480.0" y="263.0000000000001"><![CDATA[Services]]></text>
+        </g>
+        <g latexdraw:type="text" id="id713" font-family="Dialog"
+            fill="black" font-size="17" latexdraw:x="472.9999999999999" transform="rotate(270.0) translate(-898.4140625000001 137.80468749999966)">
+            <text x="472.9999999999999" y="385.0000000000001"><![CDATA[Repository]]></text>
+        </g>
+        <g latexdraw:type="rectangle" id="id715">
+            <rect x="829.75" y="370.75" width="98.5" height="18.5"
+                latexdraw:borderPos="outer" stroke-width="1.5"
+                stroke="black" fill="none"/>
+        </g>
+        <g latexdraw:type="text" id="id716" font-family="Dialog"
+            fill="black" font-size="14" latexdraw:x="836.0">
+            <text x="836.0" y="385.0"><![CDATA[Thumbnails]]></text>
+        </g>
+        <g latexdraw:type="text" id="id719" font-family="Dialog"
+            fill="black" font-size="16" latexdraw:x="706.0">
+            <text x="706.0" y="343.0"><![CDATA[File System]]></text>
+        </g>
+        <g latexdraw:type="rectangle" id="id721">
+            <rect x="570.5" y="361.5" width="227.0" height="67.0"
+                latexdraw:borderPos="outer" stroke-width="3.0"
+                stroke="#ef251b" fill="none" stroke-dasharray="8.0, 8.0"/>
+        </g>
+        <g latexdraw:type="rectangle" id="id722">
+            <rect x="829.75" y="400.75" width="98.5" height="18.5"
+                latexdraw:borderPos="outer" stroke-width="1.5"
+                stroke="black" fill="none"/>
+        </g>
+        <g latexdraw:type="text" id="id723" font-family="Dialog"
+            fill="black" font-size="14" latexdraw:x="855.0">
+            <text x="855.0" y="415.0"><![CDATA[Indicies]]></text>
+        </g>
+        <g latexdraw:type="rectangle" id="id726">
+            <rect x="819.5" y="359.5" width="117.0" height="69.0"
+                latexdraw:borderPos="outer" stroke-width="3.0"
+                stroke="#f3160e" fill="none" stroke-dasharray="8.0, 8.0"/>
+        </g>
+        <g latexdraw:type="rectangle" id="id727">
+            <rect x="580.75" y="140.75" width="98.5" height="38.5"
+                latexdraw:borderPos="outer" stroke-width="1.5"
+                stroke="black" fill="none"/>
+        </g>
+        <g latexdraw:type="rectangle" id="id728">
+            <rect x="700.75" y="140.75" width="98.5" height="38.5"
+                latexdraw:borderPos="outer" stroke-width="1.5"
+                stroke="black" fill="none"/>
+        </g>
+        <g latexdraw:type="rectangle" id="id729">
+            <rect x="820.75" y="140.75" width="98.5" height="38.5"
+                latexdraw:borderPos="outer" stroke-width="1.5"
+                stroke="black" fill="none" stroke-dasharray="8.0, 8.0"/>
+        </g>
+        <g latexdraw:type="rectangle" id="id730">
+            <rect x="560.75" y="258.75" width="118.5" height="22.5"
+                latexdraw:borderPos="outer" stroke-width="1.5"
+                stroke="black" fill="none"/>
+        </g>
+        <g latexdraw:type="rectangle" id="id731">
+            <rect x="690.75" y="258.75" width="118.5" height="22.5"
+                latexdraw:borderPos="outer" stroke-width="1.5"
+                stroke="black" fill="none"/>
+        </g>
+        <g latexdraw:type="rectangle" id="id732">
+            <rect x="820.75" y="258.75" width="118.5" height="22.5"
+                latexdraw:borderPos="outer" stroke-width="1.5"
+                stroke="black" fill="none"/>
+        </g>
+        <g latexdraw:type="text" id="id733" font-family="Dialog"
+            fill="black" font-size="14" latexdraw:x="570.0">
+            <text x="570.0" y="245.0"><![CDATA[Authentication]]></text>
+        </g>
+        <g latexdraw:type="text" id="id735" font-family="Dialog"
+            fill="black" font-size="14" latexdraw:x="590.0">
+            <text x="590.0" y="275.0"><![CDATA[Indexing]]></text>
+        </g>
+        <g latexdraw:type="text" id="id737" font-family="Dialog"
+            fill="black" font-size="14" latexdraw:x="850.0">
+            <text x="850.0" y="275.0"><![CDATA[Tagging]]></text>
+        </g>
+        <g latexdraw:type="text" id="id739" font-family="Dialog"
+            fill="black" font-size="16" latexdraw:x="600.0">
+            <text x="600.0" y="165.0"><![CDATA[Curator]]></text>
+        </g>
+        <g latexdraw:type="text" id="id741" font-family="Dialog"
+            fill="black" font-size="16" latexdraw:x="715.0">
+            <text x="715.0" y="165.0"><![CDATA[End User]]></text>
+        </g>
+        <g latexdraw:type="text" id="id743" font-family="Dialog"
+            fill="black" font-size="16" latexdraw:x="856.0">
+            <text x="856.0" y="165.0"><![CDATA[Solr]]></text>
+        </g>
+        <g latexdraw:type="rectangle" id="id745">
+            <rect x="695.75" y="390.75" width="78.5" height="28.5"
+                transform="translate(15.0 0.0) translate(-4.393398284912109 -10.60660171508789)"
+                stroke-width="1.5" fill="#404040" stroke="#404040" latexdraw:type="shadow"/>
+            <rect x="695.75" y="390.75" width="78.5" height="28.5"
+                latexdraw:borderPos="outer" stroke-width="1.5"
+                stroke="black" fill="white"/>
+        </g>
+        <g latexdraw:type="text" id="id746" font-family="Dialog"
+            fill="black" font-size="14" latexdraw:x="708.0">
+            <text x="708.0" y="410.0"><![CDATA[Content]]></text>
+        </g>
+    </g>
+    <metadata>
+        <latexdraw:metadata>
+            <latexdraw:displayBorders>false</latexdraw:displayBorders>
+            <latexdraw:autoAdjust>true</latexdraw:autoAdjust>
+            <latexdraw:ppc>50</latexdraw:ppc>
+            <latexdraw:zoom>1.0</latexdraw:zoom>
+            <latexdraw:unit>cm</latexdraw:unit>
+            <latexdraw:classicGrid>false</latexdraw:classicGrid>
+            <latexdraw:gridGap>10</latexdraw:gridGap>
+            <latexdraw:code>0</latexdraw:code>
+            <latexdraw:displayGrid>true</latexdraw:displayGrid>
+            <latexdraw:magneticGrid>false</latexdraw:magneticGrid>
+            <latexdraw:autoUpdate>true</latexdraw:autoUpdate>
+            <latexdraw:version>2.0.8</latexdraw:version>
+            <latexdraw:size>
+                <latexdraw:width>1374</latexdraw:width>
+                <latexdraw:height>684</latexdraw:height>
+            </latexdraw:size>
+            <latexdraw:position>
+                <latexdraw:x>0</latexdraw:x>
+                <latexdraw:y>0</latexdraw:y>
+            </latexdraw:position>
+            <latexdraw:dividerPosition>0.7794759825327511</latexdraw:dividerPosition>
+            <latexdraw:displayCodePanel>true</latexdraw:displayCodePanel>
+            <latexdraw:displayXScale>true</latexdraw:displayXScale>
+            <latexdraw:displayYScale>true</latexdraw:displayYScale>
+            <latexdraw:delimitorOpacity>130</latexdraw:delimitorOpacity>
+        </latexdraw:metadata>
+    </metadata>
+</svg>
