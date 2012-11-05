@@ -135,7 +135,7 @@ alternativetitlepage=true,
 \end{frame}
 
 \begin{frame}[fragile]
-\frametitle{Digitization - lloydbleekcollection.uct.ac.za}
+\frametitle{Digitization - lloydbleekcollection.cs.uct.ac.za}
 \begin{figure}
 \centering
 \framebox[\textwidth]{%
