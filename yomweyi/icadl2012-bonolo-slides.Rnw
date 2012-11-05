@@ -345,7 +345,7 @@ alternativetitlepage=true,
 \item<4-> Target Group
 \begin{itemize}
 \item<5-> Individuals with basic Web experience
-\item<6-> Total of 17 participants (80\% students)
+\item<6-> 17 participants (80\% students)
 \end{itemize}
 \item<7-> Approach
 \begin{itemize}
@@ -376,6 +376,7 @@ alternativetitlepage=true,
 \begin{itemize}
 \item<4-> Individuals with no experience working with DL tools
 \item<5-> Social networking site recruitment
+\item<6-> 23 participants
 \end{itemize}
 \item<6-> Approach
 \begin{itemize}
