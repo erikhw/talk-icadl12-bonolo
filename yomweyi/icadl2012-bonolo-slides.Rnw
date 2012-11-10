@@ -248,7 +248,7 @@ alternativetitlepage=true,
 \item Additional software components
 \begin{itemize}
 \item Apache Solr
-\item ImageMagic
+\item ImageMagick
 \item SQLite
 \end{itemize}
 \end{itemize}
@@ -349,7 +349,7 @@ alternativetitlepage=true,
 \end{itemize}
 \item Approach
 \begin{itemize}
-\item Pilot-test
+%\item Pilot-test
 \item Informed consent
 \item Pre-experiment briefing
 \item Typical DL end user tasks (search, browse)
@@ -380,7 +380,7 @@ alternativetitlepage=true,
 \end{itemize}
 \item Approach
 \begin{itemize}
-\item Pilot-test
+%\item Pilot-test
 \item Intrinsic Motivation Inventory
 \item Five (5) minute 'HOWTO' screencast
 \item Curation tasks with two datasets
