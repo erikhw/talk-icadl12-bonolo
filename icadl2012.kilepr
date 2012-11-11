@@ -48,10 +48,10 @@ order=-1
 
 [item:yomweyi/icadl2012-bonolo-slides.Rnw]
 archive=true
-column=42
+column=32
 encoding=UTF-8
 highlight=LaTeX
-line=234
+line=278
 mode=LaTeX
 open=false
 order=-1
@@ -107,8 +107,8 @@ open=false
 order=-1
 
 [view-settings,view=0,item:yomweyi/icadl2012-bonolo-slides.Rnw]
-CursorColumn=42
-CursorLine=234
+CursorColumn=32
+CursorLine=278
 JumpList=
 ViMarks=
 
