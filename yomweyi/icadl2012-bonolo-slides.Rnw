@@ -120,27 +120,42 @@ alternativetitlepage=true,
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}[plain]
+%\frametitle{University of Cape Town}
+\begin{figure}
+\centering
+%\framebox[\textwidth]{%
+\includegraphics[width=\linewidth, height=\textwidth, keepaspectratio]{images/university-of-cape-town.eps}
+%\includegraphics{images/beaultiful-universities-world.eps}
+%}
+%\caption{End User Interface}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}[plain]
 	\titlepage
 \end{frame}
 
+
 \begin{frame}[fragile]
-\frametitle{Digitization - martinwest.uct.ac.za}
+\frametitle{http://martinwest.uct.ac.za}
 \begin{figure}
 \centering
-\framebox[\textwidth]{%
-\includegraphics{images/icadl2012-bonolo-martinwest.eps}
-}
+%\framebox[\textwidth]{%
+\includegraphics[width=\linewidth, height=\textwidth, keepaspectratio]{images/icadl2012-bonolo-martinwest-collection.eps}
+%}
 %\caption{End User Interface}
 \end{figure}
 \end{frame}
 
 \begin{frame}[fragile]
-\frametitle{Digitization - lloydbleekcollection.cs.uct.ac.za}
+\frametitle{http://lloydbleekcollection.cs.uct.ac.za}
 \begin{figure}
 \centering
-\framebox[\textwidth]{%
-\includegraphics{images/icadl2012-bonolo-lloydbleek-elephant.eps}
-}
+%\framebox[\textwidth]{%
+%\includegraphics[width=\linewidth, height=\textwidth, keepaspectratio]{images/icadl2012-bonolo-lloydbleek-elephant.eps}
+\includegraphics[width=\linewidth, height=\textwidth, keepaspectratio]{images/icadl2012-bonolo-bl-collection.eps}
+%}
 \end{figure}
 \end{frame}
 
@@ -224,12 +239,12 @@ alternativetitlepage=true,
 
 
 \begin{frame}[fragile]
-\frametitle{Prototype Implementation - Bonolo Architecture}
+\frametitle{Prototype Implementation}
 \begin{figure}
 \centering
-\framebox[\textwidth]{%
+%\framebox[\textwidth]{%
 \input{images/latexdraw/icadl2012-bonolo-design.tex}
-}
+%}
 \end{figure}
 \end{frame}
 
@@ -259,9 +274,9 @@ alternativetitlepage=true,
 \frametitle{Repository Design}
 \begin{figure}
 \centering
-\framebox[\textwidth]{%
+%\framebox[\textwidth]{%
 \input{images/latexdraw/icadl2012-bonolo-repository.tex}
-}
+%}
 \end{figure}
 \begin{itemize}
 \item Hierarchical structure
@@ -276,22 +291,22 @@ alternativetitlepage=true,
 \end{frame}
 
 \begin{frame}[fragile]
-\frametitle{Repository Design x2}
+\frametitle{Repository Design (2)}
 \begin{figure}
 \centering
-\framebox[\textwidth]{%
-\input{images/latexdraw/icadl2012-bonolo-repository-structure.tex}
-}
+%\framebox[\textwidth]{%
+\input{images/latexdraw/icadl2012-bonolo-repository-structure-new.tex}
+%}
 \end{figure}
 \end{frame}
 
 \begin{frame}[fragile]
-\frametitle{End User Interface - Functionality}
+\frametitle{End User Interface}
 \begin{figure}
 \centering
-\framebox[\textwidth]{%
+%\framebox[\textwidth]{%
 \input{images/latexdraw/icadl2012-bonolo-clients-public.tex}
-}
+%}
 %\caption{End User Interface}
 \end{figure}
 \begin{itemize}
@@ -304,23 +319,23 @@ alternativetitlepage=true,
 \end{frame}
 
 \begin{frame}[fragile]
-\frametitle{End User Interface - Item View}
+\frametitle{End User Interface (2)}
 \begin{figure}
 \centering
-\framebox[\textwidth]{%
-\includegraphics{images/icadl2012-bonolo-ui-item.eps}
-}
+%\framebox[\textwidth]{%
+\includegraphics[width=\linewidth, height=\textwidth, keepaspectratio]{images/icadl2012-bonolo-ui-item.eps}
+%}
 %\caption{End User Interface}
 \end{figure}
 \end{frame}
 
 \begin{frame}[fragile]
-\frametitle{Curator Interface - Functionality}
+\frametitle{Curator Interface}
 \begin{figure}
 \centering
-\framebox[\textwidth]{%
+%\framebox[\textwidth]{%
 \input{images/latexdraw/icadl2012-bonolo-clients-curator.tex}
-}
+%}
 %\caption{End User Interface}
 \end{figure}
 \begin{itemize}
@@ -334,18 +349,18 @@ alternativetitlepage=true,
 \end{frame}
 
 \begin{frame}[fragile]
-\frametitle{Curator Interface - Item View}
+\frametitle{Curator Interface (2)}
 \begin{figure}
 \centering
-\framebox[\textwidth]{%
-\includegraphics{images/icadl2012-bonolo-ci-item.eps}
-}
+%\framebox[\textwidth]{%
+\includegraphics[width=\linewidth, height=\textwidth, keepaspectratio]{images/icadl2012-bonolo-ci-item.eps}
+%}
 %\caption{Curator Interface}
 \end{figure}
 \end{frame}
 
 \begin{frame}[fragile]
-\frametitle{End User Interface UX - Lab Experiment}
+\frametitle{End User Interface UX Experiment}
 \begin{itemize}
 \item Objective
 \begin{itemize}
@@ -370,13 +385,13 @@ alternativetitlepage=true,
 
 
 \begin{frame}[fragile]
-\frametitle{End User Interface UX - Experiment Results}
+\frametitle{End User Interface UX Experiment (2)}
 \centering
 \input{plots/evaluation-ux-ui.tex}
 \end{frame}
 
 \begin{frame}[fragile]
-\frametitle{Curator Interface UX - Online Experiment}
+\frametitle{Curator Interface UX Experiment}
 \begin{itemize}
 \item Objective
 \begin{itemize}
@@ -401,7 +416,7 @@ alternativetitlepage=true,
 
 
 \begin{frame}[fragile]
-\frametitle{Curator Interface UX - Experiment Results}
+\frametitle{Curator Interface UX Experiment (2)}
 \centering
 \input{plots/evaluation-ux-ci.tex}
 \end{frame}
@@ -413,7 +428,7 @@ alternativetitlepage=true,
 \item Participants general comments
 \end{itemize}
 
-\frametitle{Curator Interface UX - Experiment Results}
+\frametitle{Curator Interface UX Experiment (3)}
 "\textbf{$\cdots$Also, I fail to see how Bonolo differentiates itself from something like Dropbox. I can create a folder structure on my PC and upload it to Dropbox very easily. I can then browse my files and folders in Dropbox's web interface.$\cdots$}"\\
 
 \bigskip
@@ -423,7 +438,7 @@ alternativetitlepage=true,
 
 
 \begin{frame}[fragile]
-\frametitle{Repository Performance - Lab Experiment}
+\frametitle{Repository Performance Experiment}
 \begin{itemize}
 \item Objective
 \begin{itemize}
@@ -447,7 +462,7 @@ alternativetitlepage=true,
 
 
 \begin{frame}[fragile]
-\frametitle{Repository Performance - Experiment Results}
+\frametitle{Repository Performance Experiment (2)}
 \centering
 \input{plots/evaluation-perf.tex}
 \end{frame}
@@ -485,10 +500,12 @@ alternativetitlepage=true,
 
 \end{frame}
 
-\begin{frame}[fragile]
-\frametitle{Thank You}
+\begin{frame}[plain]
+%\frametitle{Thank You}
 \begin{center}
 \bigskip
+\textbf{\fontsize{18}{18}\selectfont Thank You} \\
+\vspace{\stretch{0.5}}
 \textbf{\fontsize{18}{18}\selectfont Questions?} \\
 \vspace{\stretch{0.5}}
 \textbf{\fontsize{18}{18}\selectfont Additional Information} \\
