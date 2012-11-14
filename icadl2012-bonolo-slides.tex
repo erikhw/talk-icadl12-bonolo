@@ -1,0 +1,518 @@
+% Copyright 2009 by Tomasz Mazur
+%
+% This file may be distributed and/or modified in all ways.
+
+
+\documentclass[xcolor=dvitex,t,11pt]{beamer}
+%\documentclass[t,dvipsnames,11pt]{beamer}
+
+% Latex Draw assets
+\usepackage[usenames,dvipsnames]{pstricks}
+%\usepackage{pstricks, pst-all, pstricks-add}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%       SET OPTIONS BELOW        %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usetheme[
+% Toggle showing page counter
+pagecounter=true,
+%
+% String to be used between the current page and the
+% total page count, e.g. of, /, from, etc.
+pageofpages=of,
+%
+% Defines the shape of bullet points. Available options: circle, square
+bullet=circle,
+%
+% Show a line below the frame title. 
+titleline=true,
+%
+% Set the style of the title page (true for fancy, false for standard)
+alternativetitlepage=true,
+%
+% Institution logo for fancy title page.
+% Comment out to remove the logo from the title page.
+% IMPORTANT: THERE IS A BUG IN SOME VERSIONS OF PDFLATEX AND FONTS
+% ON THE LOGOS ARE NOT RENDERED PROPERLY. IN SUCH A CASE ADD `2` 
+% TO THE NAME OF THE LOGO, E.G. comlab2 INSTEAD OF comlab
+%titlepagelogo=images/titlepage/ou, % Phiri --October 30, 2012. Commented out
+%
+% Department footer logo for fancy title page
+% Comment out to remove the logo from the footer of the title page/
+% IMPORTANT: THERE IS A BUG IN SOME VERSIONS OF PDFLATEX AND FONTS
+% ON THE LOGOS ARE NOT RENDERED PROPERLY. IN SUCH A CASE ADD `2` 
+% TO THE NAME OF THE LOGO, E.G. comlab2 INSTEAD OF comlab
+%titlepagefooterlogo=images/titlepage/comlab,
+%
+% Institution/department logo for ordinary slides
+% Comment this line out to remove the logo from all the pages.
+% Available logos are: ou, comlab, comlabinline, comlabou
+% IMPORTANT: THERE IS A BUG IN SOME VERSIONS OF PDFLATEX AND FONTS
+% ON THE LOGOS ARE NOT RENDERED PROPERLY. IN SUCH A CASE ADD `2` 
+% TO THE NAME OF THE LOGO, E.G. comlab2 INSTEAD OF comlab
+%ordinarypageslogo=images/comlab, % phiri --October 30, 2012. Commented out
+%
+%
+% Add watermark in the bottom right corner
+%watermark=<filename>,
+%
+% Set the height of the watermark.
+%watermarkheight=100pt,
+%
+% The watermark image is 4 times bigger than watermarkheight.
+%watermarkheightmult=4,
+]{Torino}
+
+% Select color theme. Available options are:
+% mininmal, greenandblue, blue, red
+\usecolortheme{blue}
+
+%Select different font themes.Available options are:
+% default, serif, structurebold, structureitalicserif, structuresmallcapsserif
+\usefonttheme{structurebold}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%       PRESENTATION INFO        %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% Footer symbols
+\long\def\symbolfootnote[#1]#2{%
+\begingroup
+\def\thefootnote{\fnsymbol{footnote}}\footnote[#1]{#2}
+\endgroup
+}
+
+\author{Lighton Phiri \and Kyle Williams \and Miles Robinson\\Stuart Hammar \and Hussein Suleman}
+\title{Bonolo\symbolfootnote[2, frame]{\tiny Sotho word meaning easy.}}
+\subtitle{A General Digital Library System for File-based Collections}
+\institute{Digital Libraries Laboratory\\Department of Computer Science\\University of Cape Town}
+\date{November 13, 2012}
+
+%
+%Replace default bullets to square bullets
+%
+\setbeamertemplate{items}[square]
+
+% Longtable lets you have tables that span multiple pages.
+\usepackage{longtable}
+
+%%% For tables
+\usepackage{multirow}
+
+% Rotating table headers/labels
+\usepackage{rotating}
+
+%package to enable tikZ
+\usepackage{tikz}
+
+% Footer collision with page numbers
+\addtobeamertemplate{footnote}{}{\vspace{2ex}}
+
+\usepackage{Sweave}
+\begin{document}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%       SLIDE DEFINITIONS        %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[plain]
+%\frametitle{University of Cape Town}
+\begin{figure}
+\centering
+%\framebox[\textwidth]{%
+\includegraphics[width=\linewidth, height=\textwidth, keepaspectratio]{images/university-of-cape-town.eps}
+%\includegraphics{images/beaultiful-universities-world.eps}
+%}
+%\caption{End User Interface}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}[plain]
+	\titlepage
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{http://martinwest.uct.ac.za}
+\begin{figure}
+\centering
+%\framebox[\textwidth]{%
+\includegraphics[width=\linewidth, height=\textwidth, keepaspectratio]{images/icadl2012-bonolo-martinwest-collection.eps}
+%}
+%\caption{End User Interface}
+\end{figure}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{http://lloydbleekcollection.cs.uct.ac.za}
+\begin{figure}
+\centering
+%\framebox[\textwidth]{%
+%\includegraphics[width=\linewidth, height=\textwidth, keepaspectratio]{images/icadl2012-bonolo-lloydbleek-elephant.eps}
+\includegraphics[width=\linewidth, height=\textwidth, keepaspectratio]{images/icadl2012-bonolo-bl-collection.eps}
+%}
+\end{figure}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Motivation}
+\begin{itemize}
+\item Preservation costs 
+\begin{itemize}
+\item Preservation lifecycle
+\item Heritage funding model
+\end{itemize}
+\item Technical skills and education
+\begin{itemize}
+\item Content curators skillset
+\item Steep learning curve for most solutions
+\end{itemize}
+\item Internet bandwidth
+\begin{itemize}
+\item Bandwidth intensive solutions
+\item Cloud-centric solutions not feasible
+\end{itemize}
+\item Existing solutions
+\begin{itemize}
+\item Complexity
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+%\begin{frame}[fragile]
+%\frametitle{Previous Projects}
+%\begin{itemize}
+%\item Largely driven by user requirements
+%\item Computing resources
+%\begin{itemize}
+%\item Minimal bandwidth use
+%\item Minimal use of computer resources
+%\item Distributable
+%\end{itemize}
+%\item Minimalistic approach
+%\item Lightweight tools and services
+%\item Projects
+%\begin{itemize}
+%\item Digital libraries without databases
+%\item In-browser digital library services
+%\item Hybrid online-offline collections
+%\end{itemize}
+%\end{itemize}
+%\end{frame}
+
+%\begin{frame}[fragile]
+%\frametitle{Design Principles}
+%\begin{itemize}
+%\item Exploratory Study
+%\begin{itemize}
+%\item Objective of study
+%\item 
+%\end{itemize}
+%\item Grounded Theory approach
+%\begin{itemize}
+%\item Data collection involved meta-analysis of existing tools
+%\item Data analysis yielded eight (8) design principles
+%\end{itemize}
+%\item Outcome of study phase yieded eight (8) design principles
+%\end{itemize}
+%\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Design Principles}
+\begin{itemize}
+\item Design for least possible resources
+\item Flexible design to facilitate extensibility
+\item Hardware and/or software platform independence
+\item Heterogeneous object, metadata and service integration
+\item Minimalist design approach
+\item Simplified preservation process
+\item Structured organisation of data
+\item Support for community and international standards
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Prototype Implementation}
+\begin{figure}
+\centering
+%\framebox[\textwidth]{%
+\input{images/latexdraw/icadl2012-bonolo-design.tex}
+%}
+\end{figure}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Tools and Technologies}
+\begin{itemize}
+\item Core technologies
+\begin{itemize}
+\item Apache Tomcat
+\item CSS
+\item HTML
+\item Java
+\item JavaScript
+\item XML
+\end{itemize}
+\item Additional software components
+\begin{itemize}
+\item Apache Solr
+\item ImageMagick
+\item SQLite
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Repository Design}
+\begin{figure}
+\centering
+%\framebox[\textwidth]{%
+\input{images/latexdraw/icadl2012-bonolo-repository.tex}
+%}
+\end{figure}
+\begin{itemize}
+\item Hierarchical structure
+\item Digital content and metadata stored on file system
+\item Objects stored with corresponding metadata record
+\item Metadata records encoded using XML
+\end{itemize}
+\begin{figure}
+%\includegraphics[height=100pt]{images/titlepage/ou}
+%\caption{Oxford University logo}
+\end{figure}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Repository Design (2)}
+\begin{figure}
+\centering
+%\framebox[\textwidth]{%
+\input{images/latexdraw/icadl2012-bonolo-repository-structure-new.tex}
+%}
+\end{figure}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{End User Interface}
+\begin{figure}
+\centering
+%\framebox[\textwidth]{%
+\input{images/latexdraw/icadl2012-bonolo-clients-public.tex}
+%}
+%\caption{End User Interface}
+\end{figure}
+\begin{itemize}
+\item Authentication
+\item Browse
+\item Commenting
+\item Search
+\item Tagging
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{End User Interface (2)}
+\begin{figure}
+\centering
+%\framebox[\textwidth]{%
+\includegraphics[width=\linewidth, height=\textwidth, keepaspectratio]{images/icadl2012-bonolo-ui-item.eps}
+%}
+%\caption{End User Interface}
+\end{figure}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Curator Interface}
+\begin{figure}
+\centering
+%\framebox[\textwidth]{%
+\input{images/latexdraw/icadl2012-bonolo-clients-curator.tex}
+%}
+%\caption{End User Interface}
+\end{figure}
+\begin{itemize}
+\item Authentication
+\item Batch import and export
+\item Browse
+\item Collection and Object management (add, edit, delete)
+\item Indexing
+\item Search
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Curator Interface (2)}
+\begin{figure}
+\centering
+%\framebox[\textwidth]{%
+\includegraphics[width=\linewidth, height=\textwidth, keepaspectratio]{images/icadl2012-bonolo-ci-item.eps}
+%}
+%\caption{Curator Interface}
+\end{figure}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{End User Interface UX Experiment}
+\begin{itemize}
+\item Objective
+\begin{itemize}
+\item Feasibility of building user interface using file store
+\item Assess impact of file store on user experience
+\end{itemize}
+\item Target Group
+\begin{itemize}
+\item Individuals with basic Web experience
+\item 17 participants (80\% students)
+\end{itemize}
+\item Approach
+\begin{itemize}
+%\item Pilot-test
+\item Informed consent
+\item Pre-experiment briefing
+\item Typical DL end user tasks (search, browse)
+\item Post-experiment questionnaire
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{End User Interface UX Experiment (2)}
+\centering
+\input{plots/evaluation-ux-ui.tex}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Curator Interface UX Experiment}
+\begin{itemize}
+\item Objective
+\begin{itemize}
+\item Assess user experience when performing curation tasks
+\end{itemize}
+\item Target Group
+\begin{itemize}
+\item Individuals with no experience working with DL tools
+\item Social networking site recruitment
+\item 23 participants
+\end{itemize}
+\item Approach
+\begin{itemize}
+%\item Pilot-test
+\item Intrinsic Motivation Inventory
+\item Five (5) minute 'HOWTO' screencast
+\item Curation tasks with two datasets
+\item Online questionnaire
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Curator Interface UX Experiment (2)}
+\centering
+\input{plots/evaluation-ux-ci.tex}
+\end{frame}
+
+
+\begin{frame}[fragile]
+
+\begin{itemize}
+\item Participants general comments
+\end{itemize}
+
+\frametitle{Curator Interface UX Experiment (3)}
+"\textbf{$\cdots$Also, I fail to see how Bonolo differentiates itself from something like Dropbox. I can create a folder structure on my PC and upload it to Dropbox very easily. I can then browse my files and folders in Dropbox's web interface.$\cdots$}"\\
+
+\bigskip
+
+"\textbf{$\cdots$I have to say though that I managed to complete the tasks without watching the video (which is a great sign I think). I'm impatient with manuals but even worse with instructional videos$\cdots$"}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Repository Performance Experiment}
+\begin{itemize}
+\item Objective
+\begin{itemize}
+\item Impact of file store structure on performance
+\item Performance metrics: response time
+\end{itemize}
+\item Test Environment
+\begin{itemize}
+\item Intel Core 2 Duo CPU E7400@ 2.80GHz
+\item 2 GB RAM
+\item 32-bit Windows 7 Ultimate edition
+\end{itemize} 
+\item Approach
+\begin{itemize}
+\item Structured and unstructured collections
+\item Exponential increase of files in collections
+\item Load time and corresponding data transfer during navigation
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Repository Performance Experiment (2)}
+\centering
+\input{plots/evaluation-perf.tex}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Conclusion}
+
+\begin{itemize}
+\item Experimental results look promising
+\begin{itemize}
+\item Effectiveness
+\item Usability
+\item Medium-sized collections
+\end{itemize}
+
+\item Work in progress
+\begin{itemize}
+\item Evaluation
+\begin{itemize}
+\item Flexibility
+\item Scalability
+\end{itemize}
+\end{itemize}
+
+\item Future work
+\begin{itemize}
+\item Reference implementation
+\begin{itemize} 
+\item Design principles
+\item Extensibility
+\end{itemize}
+\end{itemize}
+
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}[plain]
+%\frametitle{Thank You}
+\begin{center}
+\bigskip
+\textbf{\fontsize{18}{18}\selectfont Thank You} \\
+\vspace{\stretch{0.5}}
+\textbf{\fontsize{18}{18}\selectfont Questions?} \\
+\vspace{\stretch{0.5}}
+\textbf{\fontsize{18}{18}\selectfont Additional Information} \\
+\bigskip
+\textbf{\fontsize{18}{18}\selectfont \url{http://dl.cs.uct.ac.za}}
+\end{center}
+\end{frame}
+
+\end{document}

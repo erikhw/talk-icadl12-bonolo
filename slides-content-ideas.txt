@@ -1,4 +1,0 @@
-
--> Directory Hierarchy Structure
-  -> https://peepcode.com/system/previews/git-pdf/peepcode-git-preview.pdf [PAGE 5]
-  
